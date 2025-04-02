@@ -50,3 +50,5 @@ PID   USER     TIME  COMMAND
 - init: true를 사용하면 Docker의 기본 초기화 프로세스가 PID 1로 작동하여 자식 프로세스와 신호를 제대로 관리한다.
 - init: true를 설정하지 않으면 컨테이너 내부 프로세스가 직접 PID 1로 실행되어 좀비 프로세스 될 수 있다.
 - 좀비 프로세스가 될경우 docker container가 제대로 종료되지 않을 수 있다.
+
+---
