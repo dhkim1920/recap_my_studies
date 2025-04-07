@@ -119,3 +119,62 @@ Apache Spark의 Dataset은 RDD와 DataFrame의 장점을 결합한 데이터 구
 - Spark SQL의 **쿼리 최적화 엔진**으로, 성능 향상을 위한 최적화 수행  
 - **최적화 단계**: 논리적 계획 -> 물리적 계획 -> 코드 생성  
 - 논리적 계획을 분석하여 효율적인 실행 계획으로 변환하여 성능을 극대화  
+
+---
+# Spark Streaming과 Structured Streaming 비교  
+
+Spark 2.x와 3.x의 스트리밍 처리 방식 비교
+
+| 항목                 | Spark Streaming (2.x)              | Structured Streaming (2.x ~ 3.x)                    |
+|---------------------|------------------------------------|-----------------------------------------------------|
+| 처리 방식           | 마이크로 배치                       | 마이크로 배치 (연속 처리 옵션 있음)                   |
+| 데이터 구조         | DStream (RDD 기반)                  | DataFrame / Dataset                                  |
+| API 통합성          | RDD 기반                            | SQL 기반의 통합 API                                   |
+| 실시간 처리 성능    | 실시간 처리에 한계                   | 실시간 데이터 처리 최적화 (Continuous Processing)       |
+| 트랜잭션 지원       | At-least-once (중복 가능성 존재)     | Exactly Once (정확히 한 번 처리)                       |
+| 상태 관리           | updateStateByKey로 상태 관리 복잡   | MapWithState, Streaming Aggregation으로 상태 관리 용이 |
+| 성능 최적화         | 기본 병렬 처리만 지원                | Catalyst 옵티마이저와 Tungsten 엔진으로 성능 향상       |
+| 장애 복구           | WAL 기반 복구 (성능 저하 가능성 있음) | 체크포인트와 WAL로 안정적인 장애 복구 지원              |
+
+## 주요 차이점  
+
+### 1. 처리 방식  
+- Spark Streaming (2.x): 마이크로 배치 방식으로 데이터를 처리  
+- Structured Streaming (2.x ~ 3.x): 기본적으로 마이크로 배치, Spark 2.3부터 **Continuous Processing** 옵션 추가  
+- 연속 처리 모드로 실시간 처리 성능을 크게 향상  
+
+### 2. 데이터 구조  
+- Spark Streaming: RDD 기반의 DStream 사용  
+- Structured Streaming: DataFrame과 Dataset을 사용하여 실시간 데이터 처리  
+- 더 직관적이고 SQL 기반 연산이 가능  
+
+### 3. API 통합성  
+- Spark Streaming: RDD API 중심으로 사용  
+- Structured Streaming: SQL과 DataFrame API로 일관성 있는 스트리밍 처리  
+- 배치와 스트리밍을 동일한 API로 관리할 수 있어 코드의 복잡성 감소  
+
+### 4. 실시간 처리 성능  
+- Spark Streaming: 마이크로 배치 단위로 처리하므로 레이턴시 존재  
+- Structured Streaming: **Continuous Processing**으로 레이턴시 최소화 (Spark 2.3 이상)  
+- 실시간 처리 성능이 크게 개선됨  
+
+### 5. 트랜잭션 지원  
+- Spark Streaming: 기본적으로 **At-least-once** 처리, 중복 가능성 존재  
+- Structured Streaming: **Exactly Once** 트랜잭션 처리 지원  
+  - 특히 Kafka와 연동할 때 정확히 한 번 처리 보장  
+  - 소스와 싱크의 일관성을 유지하여 데이터 중복 문제 해결  
+
+### 6. 상태 관리  
+- Spark Streaming: 상태 업데이트가 복잡하며, 수동으로 관리해야 함  
+- Structured Streaming: 상태를 SQL로 쉽게 관리하며, 상태 질의 기능 제공  
+- MapWithState와 같은 고급 상태 관리 API를 통해 지속적 상태 업데이트 가능  
+
+### 7. 성능 최적화  
+- Spark Streaming: 단순한 병렬 처리에 의존  
+- Structured Streaming: Catalyst 옵티마이저와 Tungsten 엔진으로 성능 향상  
+- 스트리밍 처리에서도 배치와 동일한 최적화 기법 사용  
+
+### 8. 장애 복구  
+- Spark Streaming: WAL(Write-Ahead Log)를 사용하여 장애 복구 (성능 저하 가능성 있음)  
+- Structured Streaming: **체크포인트와 WAL**을 사용하여 보다 안정적으로 장애 복구  
+- 장애 발생 시 데이터 유실 없이 복구 가능  
