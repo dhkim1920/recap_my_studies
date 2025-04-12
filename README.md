@@ -1,7 +1,5 @@
 # 공부한 것 정리
 
----
-
 #### [kafka](./kafka/README.md)
 #### [hbase](./hbase/README.md)
 #### [hadoop](./hadoop/README.md)
