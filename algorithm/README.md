@@ -42,10 +42,16 @@ None은 파이썬에서 하나의 객체로 취급되기 때문에 `is`를 사�
 - 치환: `str.replace(old, new)`
 - 합: `sum(iterable)`
 - 최대, 최소: `max(iterable)`, `min(iterable)`
+
+### 수학
 - 절댓값: `abs(x)`
 - 최대공약수: `math.gcd(a, b)`
 - 최소공배수: `math.lcm(a, b)`
 - 제곱근: `math.sqrt(x)`
+- 조합: `math.comb(n, r)`
+  - 조합 = 선택만, 무작위
+- 순열: `math.perm(n, r)`
+  - 선택 + 나열
 
 ### 양방향 큐 (Deque)
 - `from collections import deque`
