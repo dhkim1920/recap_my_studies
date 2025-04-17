@@ -63,6 +63,14 @@ Kafka의 파티션은 하나의 리더(Leader)와 여러 개의 팔로워(Follow
 - 확장 시 파티션 수와 컨슈머 수를 비례하여 증가  
 - 컨슈머 수가 파티션 수를 초과하지 않도록 관리  
 
+## 파티션 수가 많을 경우
+### 파일 핸들러 낭비
+- 각 partition은 broker의 디렉토리와 매핑 되므로 Kafka는 많은 파일 핸들러가 필요 -> 리소스 낭비
+### 장애 복구 시간 증가
+- partition은 leader와 follower로 구분되며 오직 leader만 read/write를 수행
+- 따라서 장애 시 broker controller는 각 파티션 별 leader를 새로 선출 해야함, partition이 많으므로 오래걸림
+- 또한 broker controller가 다운될 경우, 다른 broker가 controller로 승격되고 zookeeper는 모든 partition 메타데이터를 읽어야함
+
 ## Kafka Offset
 
 Kafka의 Offset은 Kafka 토픽 내 파티션에서 메시지의 위치를 나타내는 고유한 숫자임. 
