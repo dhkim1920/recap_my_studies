@@ -1,7 +1,7 @@
 # 공부한 것 정리
 
 #### [kafka](./kafka/README.md)
-#### [hbase](./hbase/README.md)
+#### [hbase](./hbase/hbase_basic.md)
 #### [hadoop](./hadoop/hadoop-basic.md)
 #### [zookeeper](./zookeeper/zookeeper-session-id-negative-issue.md)
 #### [spark](./spark/README.md)
