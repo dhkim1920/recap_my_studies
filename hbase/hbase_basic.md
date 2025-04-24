@@ -73,6 +73,12 @@ HBase는 성능 최적화와 저장 공간 회수를 위해 **컴팩션(compacti
   - 일부 HFile만 선택하여 병합 수행
   - 삭제된 데이터나 만료된 셀은 제거되지 않음
   - 자동으로 주기적으로 실행됨
+- 주요 설졍
+  - hbase.hstore.compaction.min: Compaction을 수행하기 위한 최소 StoreFile 수 (기본값: 3)
+  - hbase.hstore.compaction.max: 한 번의 Compaction에서 병합할 수 있는 최대 StoreFile 수 (기본값: 10)
+  - hbase.hstore.compaction.min.size: 이 값보다 작은 StoreFile은 Compaction 대임
+  - hbase.hstore.compaction.max.size: 이 값보다 큰 StoreFile은 Compaction 대상에서 제외
+  - hbase.hstore.compaction.ratio: Compaction을 결정하는 비율 (기본값: 1.2)
 
 ### 메이저 컴팩션(Major Compaction)
 
@@ -80,7 +86,14 @@ HBase는 성능 최적화와 저장 공간 회수를 위해 **컴팩션(compacti
 - **특징**:
   - 해당 Region의 모든 HFile을 병합
   - 삭제 마커(Tombstone)와 만료된 데이터 제거
-  
+- 주요 설정  
+  - hbase.hregion.majorcompaction
+    - "Major Compaction 사이의 시간 간격을 밀리초 단위로 설정, 
+  이 값을 0으로 설정하면 시간 기반의 자동 Major Compaction이 비활성화됨 
+    - 하지만 사용자 요청 및 크기 기반의 Major Compaction은 여전히 실행될 수 있음 
+    - 이 값은 hbase.hregion.majorcompaction.jitter 값과 곱해져, 주어진 시간 내에서 다소 무작위하게 발생
+  - hbase.hregion.majorcompaction.jitter
+    - HBase에서 Major Compaction의 실행 시점을 무작위로 분산시키기 위한 설정 (기본값: 0.5) 
 ## Tombstone(삭제 마커)
 
 HBase에서 데이터를 삭제하면 실제로 즉시 제거되지 않고, 해당 셀에 **Tombstone** 이라는 삭제 마커가 추가됨. <br>
