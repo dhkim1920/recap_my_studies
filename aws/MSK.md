@@ -1,4 +1,4 @@
-## Amazon MSK Tiered Storage 개요 (한국어 번역 요약)
+## Amazon MSK Tiered Storage 개요
 
 ### 활성화
 - `remote.storage.enable=true`
