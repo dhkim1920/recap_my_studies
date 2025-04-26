@@ -2,7 +2,7 @@
 
 ## airflow
 
-- [README.md](airflow\README.md)
+- [airflow_basic.md](airflow\airflow_basic.md)
 - [airflow_execution_date_problem.md](airflow\airflow_execution_date_problem.md)
 
 ## algorithm
@@ -13,11 +13,16 @@
 
 - [MSK.md](aws\MSK.md)
 - [aws_sdk_comparison.md](aws\aws_sdk_comparison.md)
+- [vpc.md](aws\vpc.md)
 
 ## bigdata
 
 - [README.md](bigdata\README.md)
 - [jackson_vs_gson_comparison.md](bigdata\jackson_vs_gson_comparison.md)
+
+## cs
+
+- [network_basic.md](cs\network_basic.md)
 
 ## docker
 
@@ -52,13 +57,13 @@
 
 ## kafka
 
-- [README.md](kafka\README.md)
+- [kafka_basic.md](kafka\kafka_basic.md)
 - [kafka_commit_control.md](kafka\kafka_commit_control.md)
 
 ## phoenix
 
-- [READ.md](phoenix\READ.md)
 - [phoenix_query_hints.md](phoenix\phoenix_query_hints.md)
+- [salt.md](phoenix\salt.md)
 
 ## python
 
@@ -83,6 +88,7 @@
 - [spark_partitioning_vs_bucketing.md](spark\spark_partitioning_vs_bucketing.md)
 - [spark_persist_cache.md](spark\spark_persist_cache.md)
 - [spark_sql.md](spark\spark_sql.md)
+- [spark_sql_vs_hive.md](spark\spark_sql_vs_hive.md)
 - [spark_streaming_backpressure.md](spark\spark_streaming_backpressure.md)
 - [storagelevel_memory_options.md](spark\storagelevel_memory_options.md)
 - [streamingjobprogresslistener.md](spark\streamingjobprogresslistener.md)
