@@ -3,6 +3,7 @@
 ## airflow
 
 - [README.md](airflow\README.md)
+- [airflow_execution_date_problem.md](airflow\airflow_execution_date_problem.md)
 
 ## algorithm
 
@@ -11,14 +12,17 @@
 ## aws
 
 - [MSK.md](aws\MSK.md)
+- [aws_sdk_comparison.md](aws\aws_sdk_comparison.md)
 
 ## bigdata
 
 - [README.md](bigdata\README.md)
+- [jackson_vs_gson_comparison.md](bigdata\jackson_vs_gson_comparison.md)
 
 ## docker
 
-- [docker-compose.md](docker\docker-compose.md)
+- [docker-compose_mount_volume_many_files.md](docker\docker-compose_mount_volume_many_files.md)
+- [docker-compose_zombie_process.md](docker\docker-compose_zombie_process.md)
 - [docker.md](docker\docker.md)
 
 ## hadoop
@@ -36,9 +40,20 @@
 - [hbase_region_calculation_by_memory.md](hbase\hbase_region_calculation_by_memory.md)
 - [hbase_rowkey_design.md](hbase\hbase_rowkey_design.md)
 
+## java
+
+- [executor_service.md](java\executor_service.md)
+- [future_completablefuture.md](java\future_completablefuture.md)
+- [java_garbage_collector.md](java\java_garbage_collector.md)
+- [java_memory_structure.md](java\java_memory_structure.md)
+- [java_serializable.md](java\java_serializable.md)
+- [synchronized_reentrantlock.md](java\synchronized_reentrantlock.md)
+- [volatile.md](java\volatile.md)
+
 ## kafka
 
 - [README.md](kafka\README.md)
+- [kafka_commit_control.md](kafka\kafka_commit_control.md)
 
 ## phoenix
 
@@ -60,8 +75,17 @@
 
 - [README.md](spark\README.md)
 - [Tuning_Apache_Spark.md](spark\Tuning_Apache_Spark.md)
+- [javainputdstream_kafkautils_combined.md](spark\javainputdstream_kafkautils_combined.md)
+- [javardd.md](spark\javardd.md)
+- [javasparkcontext_sparksession_summary.md](spark\javasparkcontext_sparksession_summary.md)
+- [javastreamingcontext_vs_javasparkcontext.md](spark\javastreamingcontext_vs_javasparkcontext.md)
+- [spark_gc_settings.md](spark\spark_gc_settings.md)
 - [spark_partitioning_vs_bucketing.md](spark\spark_partitioning_vs_bucketing.md)
+- [spark_persist_cache.md](spark\spark_persist_cache.md)
+- [spark_sql.md](spark\spark_sql.md)
 - [spark_streaming_backpressure.md](spark\spark_streaming_backpressure.md)
+- [storagelevel_memory_options.md](spark\storagelevel_memory_options.md)
+- [streamingjobprogresslistener.md](spark\streamingjobprogresslistener.md)
 
 ## yarn
 
