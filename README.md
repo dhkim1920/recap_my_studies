@@ -29,6 +29,7 @@
 - [docker-compose_mount_volume_many_files.md](docker\docker-compose_mount_volume_many_files.md)
 - [docker-compose_zombie_process.md](docker\docker-compose_zombie_process.md)
 - [docker.md](docker\docker.md)
+- [dockerfile_execution_commands.md](docker\dockerfile_execution_commands.md)
 
 ## hadoop
 
@@ -78,12 +79,13 @@
 
 ## spark
 
-- [README.md](spark\README.md)
 - [Tuning_Apache_Spark.md](spark\Tuning_Apache_Spark.md)
+- [is_spark_streaming_real_time.md](spark\is_spark_streaming_real_time.md)
 - [javainputdstream_kafkautils_combined.md](spark\javainputdstream_kafkautils_combined.md)
 - [javardd.md](spark\javardd.md)
 - [javasparkcontext_sparksession_summary.md](spark\javasparkcontext_sparksession_summary.md)
 - [javastreamingcontext_vs_javasparkcontext.md](spark\javastreamingcontext_vs_javasparkcontext.md)
+- [spark_basic.md](spark\spark_basic.md)
 - [spark_gc_settings.md](spark\spark_gc_settings.md)
 - [spark_partitioning_vs_bucketing.md](spark\spark_partitioning_vs_bucketing.md)
 - [spark_persist_cache.md](spark\spark_persist_cache.md)
