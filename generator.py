@@ -15,7 +15,7 @@ def generate_readme(root_path=".", entry_exclude=None):
 
             md_files = [f for f in sorted(os.listdir(full_path)) if f.endswith(".md")]
             for md_file in md_files:
-                rel_path = os.path.join(entry, md_file)
+                rel_path = os.path.join(entry, md_file).replace("\\", "/")
                 contents.append(f"- [{md_file}]({rel_path})")
             contents.append("")
 
