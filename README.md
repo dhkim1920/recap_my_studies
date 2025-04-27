@@ -4,6 +4,7 @@
 
 - [airflow_basic.md](airflow\airflow_basic.md)
 - [airflow_execution_date_problem.md](airflow\airflow_execution_date_problem.md)
+- [airflow_executors.md](airflow\airflow_executors.md)
 
 ## algorithm
 
@@ -34,6 +35,7 @@
 ## hadoop
 
 - [hadoop-basic.md](hadoop\hadoop-basic.md)
+- [hadoop_streaming.md](hadoop\hadoop_streaming.md)
 - [hdfs_handler_configuration_analysis.md](hadoop\hdfs_handler_configuration_analysis.md)
 - [hdfs_volume_policy.md](hadoop\hdfs_volume_policy.md)
 
