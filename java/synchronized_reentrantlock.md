@@ -1,11 +1,9 @@
 
 # synchronized
-
-- **임계 영역(Critical Section)**을 지정하여 하나의 스레드만 접근 가능
-- **동기화**를 통해 데이터 일관성을 보장
+- **Critical Section**을 지정하여 하나의 스레드만 접근 가능하게 한다.
+- **동기화**를 통해 데이터 일관성을 보장할 수 있다.
 
 ## 주요 특징
-
 | 항목 | 설명 |
 |:-----|:-----|
 | 상호 배제(Mutual Exclusion) | 한 번에 하나의 스레드만 임계 영역 진입 가능 |
@@ -14,7 +12,7 @@
 
 ## 동작 원리
 
-- `synchronized`는 **모니터 락(monitor lock)** 사용
+- `synchronized`는 **monitor lock** 사용
 - lock을 획득한 스레드만 synchronized 블록 실행
 - 나머지 스레드는 lock 해제될 때까지 대기
 

@@ -1,4 +1,6 @@
 
+# Kafka Commit 설정
+
 ## enable.auto.commit = true
 
 - Kafka 기본 설정
