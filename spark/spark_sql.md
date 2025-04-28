@@ -1,17 +1,17 @@
 # Spark SQL / DataFrame 주요 연산 정리
 
-## 1. join
+## join
 
 - 두 개 이상의 DataFrame을 조인
 - 조건 없이 join하면 Cross Join (Cartesian Product) 발생할 수 있음 → 항상 조인 조건 명시
-  - 3.1 이상 부터는 끄고 켤수 있음 
+  - 3.1 이상부터는 끄고 켤 수 있음
 
 **사용법**
 ```python
 df1.join(df2, df1["id"] == df2["id"], "inner")
 ```
 
-### 1. Inner Join (이너 조인)
+### Inner Join (이너 조인)
 - 양쪽 테이블 모두에 일치하는 데이터만 결과에 포함
 
 **사용법**
@@ -19,8 +19,7 @@ df1.join(df2, df1["id"] == df2["id"], "inner")
 df1.join(df2, df1["id"] == df2["id"], "inner")
 ```
 
-### 2. Left Outer Join (레프트 아우터 조인)
-
+### Left Outer Join (레프트 아우터 조인)
 - 왼쪽 테이블(df1)의 모든 데이터를 결과에 포함
 - 오른쪽 테이블에 매칭이 없으면 NULL로 채움
 
@@ -30,8 +29,7 @@ df1.join(df2, df1["id"] == df2["id"], "left_outer")
 df1.join(df2, df1["id"] == df2["id"], "left")
 ```
 
-### 3. Right Outer Join (라이트 아우터 조인)
-
+### Right Outer Join (라이트 아우터 조인)
 - 오른쪽 테이블(df2)의 모든 데이터를 결과에 포함
 - 왼쪽 테이블에 매칭이 없으면 NULL로 채움
 
@@ -41,8 +39,7 @@ df1.join(df2, df1["id"] == df2["id"], "right_outer")
 df1.join(df2, df1["id"] == df2["id"], "right")
 ```
 
-### 4. Full Outer Join (풀 아우터 조인)
-
+### Full Outer Join (풀 아우터 조인)
 - 양쪽 테이블 모두를 결과에 포함
 - 어느 한쪽이 없으면 NULL로 채움
 
@@ -52,8 +49,7 @@ df1.join(df2, df1["id"] == df2["id"], "full_outer")
 df1.join(df2, df1["id"] == df2["id"], "full")
 ```
 
-### 5. Self Join (셀프 조인)
-
+### Self Join (셀프 조인)
 - 하나의 테이블을 자기 자신과 조인
 - 주로 계층 구조나 자기 비교에 사용
 
@@ -62,8 +58,7 @@ df1.join(df2, df1["id"] == df2["id"], "full")
 df1.alias("a").join(df1.alias("b"), col("a.manager_id") == col("b.employee_id"))
 ```
 
-### 6. Cross Join (크로스 조인)
-
+### Cross Join (크로스 조인)
 - 모든 레코드 조합을 생성하는 조인
 - A 테이블과 B 테이블의 모든 경우를 곱
 - spark.sql.crossJoin.enabled=true 설정 필요
@@ -87,7 +82,7 @@ df1.join(df2) # Spark 3.1 이상
 
 ---
 
-## 2. select
+## select
 
 - 컬럼 추출 또는 변형
 
@@ -99,7 +94,7 @@ df.selectExpr("age + 10 as age_plus_10")
 
 ---
 
-## 3. withColumn
+## withColumn
 
 - 컬럼 추가 또는 수정
 
@@ -113,7 +108,7 @@ df.withColumn("new_age", col("age") + 1)
 
 ---
 
-## 4. when
+## when
 
 - 조건부 컬럼 생성 (CASE WHEN)
 
@@ -129,9 +124,9 @@ df.withColumn(
 
 ---
 
-## 5. filter / where
+## filter / where
 
-- 행(row) 필터링
+- 행 필터링
 
 **사용법**
 ```python
@@ -141,7 +136,7 @@ df.where(col("age") > 20)
 
 ---
 
-## 6. groupBy + agg
+## groupBy + agg
 
 - 그룹별 집계 연산
 
@@ -155,7 +150,7 @@ df.groupBy("department").agg(
 
 ---
 
-## 7. orderBy / sort
+## orderBy / sort
 
 - 결과 정렬
 
@@ -167,7 +162,7 @@ df.sort("name", "age")
 
 ---
 
-# Spark SQL 최적화 
+# Spark SQL 최적화
 
 ## Shuffle Join vs Broadcast Join
 
@@ -213,3 +208,72 @@ df.write.bucketBy(100, "user_id").saveAsTable("bucketed_table")
 - 동일 버킷끼리 조인하면 shuffle 없이 처리
 
 ---
+
+# Scala 키워드 정리
+
+## @transient
+
+- **역할**
+  - 객체를 직렬화할 때 해당 필드를 제외시키는 키워드
+
+- **왜 필요?**
+  - Spark 같은 분산 시스템에서는 객체를 네트워크로 전송할 때 직렬화가 필요한데, 불필요한 리소스(예: DB 커넥션, 파일 핸들 등)를 직렬화하면 에러나 성능 문제가 발생함
+  - 이럴 때 `@transient`를 붙여서 직렬화 대상에서 제외함
+
+- **예시**
+```scala
+@transient var connection: Connection = _
+```
+
+- **정리**
+  - 직렬화 시 제외
+  - Executor에서 재초기화 필요할 수 있음
+
+---
+
+## lazy
+
+- **역할**
+  - 변수를 처음 사용할 때 초기화하는 키워드
+
+- **왜 필요?**
+  - 객체 생성 시 무거운 연산이나 리소스 사용을 지연해서, 실제로 필요할 때까지 초기화를 늦춰서 성능을 최적화할 수 있음
+
+- **예시**
+```scala
+lazy val bigData = loadData() // 실제로 bigData를 쓸 때 loadData() 호출
+```
+
+- **정리**
+  - 처음 접근할 때만 초기화
+  - 이후에는 캐싱되어 재계산 안 함
+
+---
+
+## @transient lazy 조합
+
+- **@transient lazy를 같이 쓰는 이유**
+  - 직렬화 제외하면서 필요할 때만 초기화하려고 같이 사용함
+
+- **주 사용처**
+  - 무거운 리소스 (DB 커넥션, 파일 핸들, 네트워크 연결 등)
+
+- **예시**
+```scala
+class Example extends Serializable {
+  @transient lazy val dbConnection: Connection = {
+    println("DB 연결 생성")
+    DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "user", "password")
+  }
+}
+```
+
+- **동작 흐름**
+  - 객체 직렬화할 때 dbConnection은 제외
+  - Executor나 필요 위치에서 dbConnection을 처음 사용할 때 연결 생성
+  - 이후에는 같은 객체 안에서는 다시 생성하지 않고 재사용
+
+- **주의사항**
+  - 처음 접근할 때 실패하면 런타임 오류 발생 가능
+  - Executor마다 따로 생성되므로 관리 필요
+
