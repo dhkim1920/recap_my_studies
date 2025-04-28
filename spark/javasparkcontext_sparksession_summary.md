@@ -32,8 +32,6 @@ JavaSparkContext jsc = new JavaSparkContext(conf);
 | `stop()` | SparkContext를 종료하고 리소스 해제 |
 | `emptyRDD()` | 비어있는 RDD 생성 |
 
----
-
 ## 요약
 
 - `JavaSparkContext`는 Spark에서 Java 애플리케이션이 클러스터를 제어하는 시작점

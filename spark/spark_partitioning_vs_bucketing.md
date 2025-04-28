@@ -12,11 +12,13 @@
 - 필터 조건이 파티션 컬럼에 적용되면 해당 디렉토리만 스캔하는 **Partition Pruning**이 가능
 - 낮은 카디널리티 컬럼(예: 날짜, 국가)에 적합
 
+> 카디널리티(Cardinality)란? 서로 다른 값의 개수를 말한다.
+
 ### 예시
 ```python
 df.write.partitionBy("year", "month").parquet("path")
 ```
-
+---
 ## 2. Bucketing in Spark
 
 ### 정의
@@ -34,6 +36,7 @@ df.write.partitionBy("year", "month").parquet("path")
 df.write.bucketBy(8, "user_id").saveAsTable("bucketed_table")
 ```
 
+---
 ## 3. Partitioning vs Bucketing 비교
 
 | 항목            | Partitioning                            | Bucketing                                 |
@@ -45,13 +48,19 @@ df.write.bucketBy(8, "user_id").saveAsTable("bucketed_table")
 | 정렬 여부        | 정렬 없음                                 | 정렬 보장되지 않음                         |
 | 사용 메서드      | `.partitionBy()`                         | `.bucketBy()` + `.saveAsTable()` 필요      |
 
+### 참고
+- Bucket Pruning 이란?
+  - 버킷팅(bucketBy)된 테이블에서,  쿼리 조건(predicate)에 따라 읽어야 할 버킷 파일만 선별해서 읽는 최적화 기능
+- Partition Pruning 이란?
+  - Partition 컬럼에 대해 WHERE 조건이 걸렸을 때, 필요한 파티션만 골라서 읽는 최적화
+  
+---
 ## 4. 최적 사용 전략
 
 - **단일 필터 기반 조회가 많으면**: Partitioning 사용
 - **복잡한 조인/샘플링이 많으면**: Bucketing 사용
-- **두 개 조합도 가능**:
+- **두 개 조합도 가능**
+예시)
 ```python
 df.write.partitionBy("date").bucketBy(8, "user_id").saveAsTable("table")
 ```
-
-> 단, Spark에서는 Bucketing이 `.saveAsTable()`일 때만 유효

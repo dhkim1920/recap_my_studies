@@ -84,7 +84,7 @@ spark-submit \
 
 - GC 변경만으로 성능 향상 보장 안 됨 → Heap 크기, GC 튜닝 옵션 함께 조정 필요
 - 대용량 Executor 사용 시 반드시 G1GC 고려
-- CMS는 Old 영역 Full 시 비용 급증 주의
+- CMS는 Old 영역 Full 비용 급증 주의
 - ZGC는 Spark 최신버전 + 최신 JDK 필요
 
 ---

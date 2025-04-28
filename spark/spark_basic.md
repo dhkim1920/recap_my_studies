@@ -51,7 +51,8 @@
 - **분산성**: 클러스터에 걸쳐 데이터 분산  
 - **내결함성 (Fault Tolerance)**: 작업 실패 시 데이터 복구 가능  
   - 계보(Lineage): RDD가 어떻게 생성되었는지 추적할 수 있는 변환 이력
-  
+
+---
 **RDD 연산:**  
 - **Transformations**: 기존 RDD를 변환하여 새로운 RDD를 생성 (예: `map`, `filter`)  
 - **Actions**: RDD의 결과를 반환하거나 저장 (예: `collect`, `count`)  
@@ -80,7 +81,7 @@ Apache Spark의 Dataset은 RDD와 DataFrame의 장점을 결합한 데이터 구
 | 사용성     | 함수형 API                   | SQL과 함수형 API 지원             | 타입 안전한 API                |
 | 성능       | 비교적 느림                  | 빠름 (카탈리스트 최적화 사용)     | 빠름 (타입 체크로 최적화)        |
 
-
+---
 ## Spark 메모리 관리 (2.x 이후)
 - **메모리 풀 구조**: Execution Memory와 Storage Memory를 **하나의 메모리 풀**에서 관리  
 - **동적 메모리 공유**:  
@@ -90,7 +91,16 @@ Apache Spark의 Dataset은 RDD와 DataFrame의 장점을 결합한 데이터 구
 #### **메모리 할당 비율**  
 - **spark.memory.fraction = 0.6**: 전체 JVM 힙 메모리의 60%를 메모리 풀로 사용  
 - **spark.memory.storageFraction = 0.5**: 메모리 풀의 절반(30%)을 기본 Storage로 할당  
-- **동적 조정**: 필요 시 Storage를 줄이고 Execution 메모리로 사용 가능  
+- **동적 조정**: 필요 시 Storage를 줄이고 Execution 메모리로 사용 가능
+#### 구조 참고
+```python
+Executor Heap 전체
+├── Non-Spark 메모리 (User JVM memory, Spark 제외)
+└── Spark 메모리 풀 (spark.memory.fraction 비율)
+     ├── Execution Memory (shuffle, sort, join, aggregation 등)
+     └── Storage Memory (RDD/DataFrame Cache, Broadcast variable 등)
+         (spark.memory.storageFraction 비율만큼 최소 확보)
+```
 
 #### **문제 해결 방법**  
 - **메모리 증가**: `spark.executor.memory`, `spark.driver.memory` 늘리기  

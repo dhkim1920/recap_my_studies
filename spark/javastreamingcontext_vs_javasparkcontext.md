@@ -12,7 +12,7 @@
 ### foreachRDD
 
 - Spark Streaming에서 DStream에 적용하는 Transformation 메서드
-- 각 배치(batch)마다 생성된 RDD를 하나씩 가져와서 처리할 때 사용
+- 각 batch마다 생성된 RDD를 하나씩 가져와서 처리할 때 사용
 
 ### 주요 특징
 

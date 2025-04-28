@@ -26,7 +26,7 @@ class MyClass:
 obj = MyClass(10)
 ```
 
-**출력:**
+**출력**
 ```
 1. __new__ 호출
 2. __init__ 호출

@@ -24,6 +24,7 @@
 ## cs
 
 - [network_basic.md](cs/network_basic.md)
+- [utf_8_and_endian.md](cs/utf_8_and_endian.md)
 
 ## docker
 
@@ -37,6 +38,7 @@
 - [hadoop-basic.md](hadoop/hadoop-basic.md)
 - [hadoop_streaming.md](hadoop/hadoop_streaming.md)
 - [hdfs_handler_configuration_analysis.md](hadoop/hdfs_handler_configuration_analysis.md)
+- [hdfs_missing_or_corrupt_block.md](hadoop/hdfs_missing_or_corrupt_block.md)
 - [hdfs_volume_policy.md](hadoop/hdfs_volume_policy.md)
 
 ## hbase
@@ -60,8 +62,10 @@
 
 ## kafka
 
+- [broker_tuning.md](kafka/broker_tuning.md)
 - [kafka_basic.md](kafka/kafka_basic.md)
 - [kafka_commit_control.md](kafka/kafka_commit_control.md)
+- [kafka_partition_guide.md](kafka/kafka_partition_guide.md)
 
 ## phoenix
 
@@ -94,7 +98,6 @@
 - [spark_sql.md](spark/spark_sql.md)
 - [spark_sql_vs_hive.md](spark/spark_sql_vs_hive.md)
 - [spark_streaming_backpressure.md](spark/spark_streaming_backpressure.md)
-- [storagelevel_memory_options.md](spark/storagelevel_memory_options.md)
 - [streamingjobprogresslistener.md](spark/streamingjobprogresslistener.md)
 
 ## yarn

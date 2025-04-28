@@ -16,6 +16,7 @@ df.cache()
 - 메모리 초과 시 디스크 저장
 - 자주 접근하는 데이터의 성능 대폭 향상
 - cache 호출 후 count(), collect() 같은 action으로 강제 materialization 수행
+  - cache 호출 시에는 메모리에 올라가는게 아니고 action에 올라간다는 말
 
 ---
 
@@ -44,13 +45,15 @@ df.persist(StorageLevel.MEMORY_AND_DISK_SER)
 - MEMORY_ONLY: 빠르지만 메모리 초과 시 다시 계산
 - MEMORY_AND_DISK: 안정적, 디스크 백업
 - MEMORY_ONLY_SER: 메모리 절약, CPU 부하 증가
-- MEMORY_AND_DISK_SER: 절충안
+- MEMORY_AND_DISK_SER: MEMORY_ONLY_SER 절충안
 - DISK_ONLY: 메모리 부담 없음, 느림
 
 ## persist(StorageLevel.MEMORY_ONLY_SER())
 
 - 메모리에 직렬화(Serialized) 형태로만 저장
-- 메모리 최적화가 필요한 경우 적합
+- 일반 MEMORY_ONLY는 Java 객체 형태로 저장해서 메모리를 많이 차지함
+- MEMORY_ONLY_SER()는 직렬화된 상태로 저장하여 메모리 사용량이 훨씬 적음
+- 대신 직렬화/역직렬화 비용 때문에 CPU 부하는 약간 증가할 수 있음
 
 **사용법**
 ```java
@@ -60,7 +63,7 @@ dstream.persist(StorageLevel.MEMORY_ONLY_SER());
 
 **주의사항**
 - 메모리 부족 시 디스크 저장 없이 다시 계산
-- 빈번한 접근이면 MEMORY_ONLY가 더 나을 수 있음
+- 직렬화/역직렬화 오버헤드가 있기 때문에 빈번한 접근에는 MEMORY_ONLY가 더 빠를 수 있음
 
 ## persist(StorageLevel.MEMORY_AND_DISK_SER())
 

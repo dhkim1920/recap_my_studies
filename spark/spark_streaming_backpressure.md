@@ -3,17 +3,18 @@
 
 ### 개요
 
-`spark.streaming.backpressure.enabled`는 **Spark Streaming에서 backpressure 기능을 활성화**하는 설정
+`spark.streaming.backpressure.enabled`는 **Spark Streaming에서 backpressure 기능을 활성화**하는 설정이다.
 
-이 기능은 **수신 속도를 자동 조절**하여, 시스템이 처리할 수 있는 만큼만 데이터를 수신
+**수신 속도를 자동 조절**하여, 시스템이 처리할 수 있는 만큼만 데이터를 수신하여 **지연 최소화** 및 **리소스 과부하 방지**가 가능하다.
 
-이를 통해 **지연 최소화** 및 **리소스 과부하 방지**가 가능
+
+(웬만하면 설정하는게 좋다.)
 
 ---
 
-### 설정 방법
+## 설정 방법
 
-#### SparkConf 사용 시
+### SparkConf 사용 시
 
 ```scala
 val conf = new SparkConf()
@@ -21,7 +22,7 @@ val conf = new SparkConf()
   .set("spark.streaming.backpressure.enabled", "true")
 ```
 
-#### spark-submit 명령어 사용 시
+### spark-submit 명령어 사용 시
 
 ```bash
 spark-submit \
@@ -34,8 +35,7 @@ spark-submit \
 
 ### 작동 방식
 
-- 백프레셔 기능은 **PID(Proportional-Integral-Derivative) 제어기**를 기반으로 동작합니다.
-- 이전 배치의 **처리 시간** 및 **큐 대기 시간(지연)** 을 분석하여,
-- **다음 배치의 수신 속도**를 자동으로 조절합니다.
+- 백프레셔 기능은 **PID(Proportional-Integral-Derivative) 제어기**를 기반으로 동작한다.
+- 이전 배치의 **처리 시간** 및 **큐 대기 시간(지연)** 을 분석하여, **다음 배치의 수신 속도**를 자동으로 조절한다.
 
-이로 인해 **데이터 폭주 상황에서도 안정적 운영**이 가능하며, 처리 가능한 수준의 속도로 수신을 제한함으로써 시스템 과부하를 예방
+> 이로 인해 **데이터 폭주 상황에서도 안정적 운영**이 가능하며, 처리 가능한 수준의 속도로 수신을 제한함으로써 시스템 과부하를 예방
