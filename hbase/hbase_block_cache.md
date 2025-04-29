@@ -33,6 +33,7 @@
     - Bloom 필터 및 인덱스 → LruBlockCache
     - 데이터 블록 → BucketCache
 
+> 참고) off-heap이란 JVM Heap 메모리 바깥의 운영체제 메모리를 직접 사용하는 것
 ---
 
 ## Block Cache 비활성화
