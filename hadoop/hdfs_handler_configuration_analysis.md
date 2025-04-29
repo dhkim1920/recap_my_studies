@@ -13,7 +13,7 @@ HDFS에서는 클라이언트와의 통신을 처리하기 위해 NameNode와 Da
 - 다라서 과도하게 높이면 NameNode는 더 많은 요청을 동시에 처리하려고 시도한다.
 - 그러나 **DataNode가 충분히 응답하지 못할 경우**, 전체 시스템 병목 현상이 발생한다.
 
-### 2. NameNode handler 과다 부족
+### 2. NameNode handler 부족
 - 클라이언트의 HDFS 명령어(ls, get, put) 실행이 느려짐
 - NameNode RPC queue가 쌓임 (RPC 요청이 대기)
 - 심하면 NameNode GC 증가 → OutOfMemoryError로 NameNode 다운
