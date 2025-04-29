@@ -8,7 +8,7 @@
 ## 2. Hotspot(쓰기 병목) 방지
 ### 문제
 - 시간 순 정렬 RowKey 사용 시 특정 Region에 쓰기 집중 → 병목 발생
-- 
+
 ### 해결 방법
 - **해시 기반 prefix**: `00_user123`, `01_user123` 등으로 앞단 분산
 - **reverse timestamp**: 최신 데이터가 앞에 오게 하여 read latency 개선
