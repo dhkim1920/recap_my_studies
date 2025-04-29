@@ -24,8 +24,8 @@
 
 ## 2. 그럼 왜 이렇게 구성할까??
 
-- HBase는 **latency** 이 중요한 서비스용 스토리지
-- Locality를 확보하지 않으면 네트워크를 타는 I/O가 많아져 read latency 급증
+- HBase는 **latency**가 중요한 서비스용 스토리지
+- Locality를 확보하지 않으면 네트워크를 타는 I/O가 많아져 read latency 급증한다.
 - 즉, HBase의 성능 핵심은 데이터가 **“가까이”** 있는가임
 
 ## 3. 최적 운영 전략 (추천)
@@ -37,4 +37,4 @@
 | RegionServer   | DataNode와 동일            | Local flush/write 확보          |
 | MapReduce      | YARN NodeManager 분산      | 자원 경합을 최소화하도록 조절   |
 
-> 또한, HBase는 MR job보다 long-running process이므로, MR이 자원을 다 쓰는 일이 없도록 YARN resource limit을 명확히 제한하는 것도 필요
+> 또한, HBase는 MR job보다 long-running process이므로, MR이 자원을 다 쓰는 일이 없도록 YARN resource limit을 명확히 제한하는 것도 필요하다. (같이 쓴다면 이건 쫌 중요)
