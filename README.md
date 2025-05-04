@@ -19,6 +19,7 @@
 ## bigdata
 
 - [README.md](bigdata/README.md)
+- [column_vs_row_db.md](bigdata/column_vs_row_db.md)
 - [jackson_vs_gson_comparison.md](bigdata/jackson_vs_gson_comparison.md)
 
 ## cs
@@ -37,6 +38,7 @@
 
 - [hadoop-basic.md](hadoop/hadoop-basic.md)
 - [hadoop_streaming.md](hadoop/hadoop_streaming.md)
+- [hdfs_block_size.md](hadoop/hdfs_block_size.md)
 - [hdfs_handler_configuration_analysis.md](hadoop/hdfs_handler_configuration_analysis.md)
 - [hdfs_missing_or_corrupt_block.md](hadoop/hdfs_missing_or_corrupt_block.md)
 - [hdfs_volume_policy.md](hadoop/hdfs_volume_policy.md)
@@ -48,6 +50,7 @@
 - [hbase_locality_architecture.md](hbase/hbase_locality_architecture.md)
 - [hbase_major_compaction_file_size_vs_count.md](hbase/hbase_major_compaction_file_size_vs_count.md)
 - [hbase_region_calculation_by_memory.md](hbase/hbase_region_calculation_by_memory.md)
+- [hbase_region_split_recovery.md](hbase/hbase_region_split_recovery.md)
 - [hbase_rowkey_design.md](hbase/hbase_rowkey_design.md)
 
 ## java
