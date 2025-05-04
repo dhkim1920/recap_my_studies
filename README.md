@@ -47,6 +47,7 @@
 
 - [hbase_basic.md](hbase/hbase_basic.md)
 - [hbase_block_cache.md](hbase/hbase_block_cache.md)
+- [hbase_compaction_basic.md](hbase/hbase_compaction_basic.md)
 - [hbase_locality_architecture.md](hbase/hbase_locality_architecture.md)
 - [hbase_major_compaction_file_size_vs_count.md](hbase/hbase_major_compaction_file_size_vs_count.md)
 - [hbase_region_calculation_by_memory.md](hbase/hbase_region_calculation_by_memory.md)
