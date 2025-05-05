@@ -8,7 +8,11 @@
 
 ## algorithm
 
-- [README.md](algorithm/README.md)
+- [algorithm_basic.md](algorithm/algorithm_basic.md)
+- [dfs_bfs.md](algorithm/dfs_bfs.md)
+- [dp.md](algorithm/dp.md)
+- [greedy.md](algorithm/greedy.md)
+- [sorting.md](algorithm/sorting.md)
 
 ## aws
 
