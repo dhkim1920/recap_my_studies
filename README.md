@@ -12,6 +12,7 @@
 - [dfs_bfs.md](algorithm/dfs_bfs.md)
 - [dp.md](algorithm/dp.md)
 - [greedy.md](algorithm/greedy.md)
+- [searching.md](algorithm/searching.md)
 - [sorting.md](algorithm/sorting.md)
 
 ## aws
@@ -43,6 +44,7 @@
 - [hadoop-basic.md](hadoop/hadoop-basic.md)
 - [hadoop_streaming.md](hadoop/hadoop_streaming.md)
 - [hdfs_block_size.md](hadoop/hdfs_block_size.md)
+- [hdfs_file_deletion.md](hadoop/hdfs_file_deletion.md)
 - [hdfs_handler_configuration_analysis.md](hadoop/hdfs_handler_configuration_analysis.md)
 - [hdfs_missing_or_corrupt_block.md](hadoop/hdfs_missing_or_corrupt_block.md)
 - [hdfs_volume_policy.md](hadoop/hdfs_volume_policy.md)
@@ -55,6 +57,7 @@
 - [hbase_locality_architecture.md](hbase/hbase_locality_architecture.md)
 - [hbase_major_compaction_file_size_vs_count.md](hbase/hbase_major_compaction_file_size_vs_count.md)
 - [hbase_region_calculation_by_memory.md](hbase/hbase_region_calculation_by_memory.md)
+- [hbase_region_merge.md](hbase/hbase_region_merge.md)
 - [hbase_region_split_recovery.md](hbase/hbase_region_split_recovery.md)
 - [hbase_rowkey_design.md](hbase/hbase_rowkey_design.md)
 
@@ -62,6 +65,7 @@
 
 - [executor_service.md](java/executor_service.md)
 - [future_completablefuture.md](java/future_completablefuture.md)
+- [gradle_vs_maven.md](java/gradle_vs_maven.md)
 - [java_garbage_collector.md](java/java_garbage_collector.md)
 - [java_memory_structure.md](java/java_memory_structure.md)
 - [java_serializable.md](java/java_serializable.md)
