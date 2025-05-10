@@ -12,6 +12,8 @@
 - 알맞은 조인 선택 
   - ShuffledHashJoin: 양쪽 테이블 모두 셔플
   - BroadcastHashJoin: 작은 테이블을 전체 노드에 브로드 캐스트
+    - spark.sql.autoBroadastJoinThreshold 로 브로드캐스트 용량 설정 가능
+    - broadcast 메서드로 강제 가능
   
 ---
 # Spark App 튜닝
@@ -40,7 +42,7 @@ Spark가 변환 작업을 할 때, 두 가지 의존성 관계가 생긴다.
    - `cogroup`은 여러 데이터셋을 한 번의 셔플로 묶어버린다. 그리고 같은 키에 해당하는 값들을 한꺼번에 가져온다.
 
 ## Shuffle이 발생하지 않는 경우
-- 두 RDD가 동일한 파티셔너로 파티셔닝되어 있고, 조인 시 파티션 수가 같으면 추가적인 셔플이 필요 없다.
+- 두 RDD가 동일한 파티셔너로 파티셔닝되어 있고, 키 기반 연산 시 키가 동일한 파티션에 위치.
 - 작은 데이터셋은 Broadcast Join으로 셔플 없이 처리가 가능하다.
 
 ## Shuffle 변환을 추가해야 할 때
