@@ -15,8 +15,8 @@
 
 - Kafka의 기본 보존 설정
   - `log.retention.ms`: 전체 보존 시간
-  - `log.retention.bytes`: 전체 보존 크기
-  - 클러스터 또는 토픽 단위로 설정 가능
+  - `log.retention.bytes`: 전체 보존 크기 (참고. 이건 보통 데이터가 날라가면 안되니 크게 설정한다.)
+  - 클러스터 또는 토픽 단위로 설정 가능 (server.properties, kafka-configs.sh + 명령어)
 
 - **계층형 스토리지 활성화 시**, 아래 설정을 추가로 사용 가능
   - `local.retention.ms`: 삭제하기 전에 로컬 로그 세그먼트를 보존할 시간
@@ -24,8 +24,8 @@
 
 #### 예시
 
-- `log.retention.ms = 7일`
 - `local.retention.ms = 12시간`
+- `log.retention.ms = 7일`
 
 → 처음 12시간은 로컬 스토리지에 저장  
 → 이후 7일까지는 S3 기반 계층형 스토리지에 저장
