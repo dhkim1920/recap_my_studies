@@ -9,9 +9,11 @@
 
 ## Block Cache의 동작 방식
 
-1. 클라이언트가 데이터를 조회하면, RegionServer는 먼저 Block Cache에서 해당 블록이 있는지 확인
+1. 클라이언트가 데이터를 조회하면, RegionServer는 먼저 Block Cache에서 해당 블록이 있는지 확인 (Memstore 다음임)
 2. 블록이 캐시에 있으면, 캐시에서 바로 데이터를 반환
 3. 블록이 캐시에 없으면, 디스크에서 블록을 읽은 후 캐시에 저장하고 데이터를 반환
+
+**※ Block cache의 데이터는 꼭 최신 데이터가 아니다.**
 
 ## Block Cache의 구현체
 

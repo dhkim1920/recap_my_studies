@@ -3,7 +3,7 @@
 ## 정의
 
 Hadoop Streaming은 Hadoop MapReduce 작업을 실행할 때, 표준 입출력(STDIN/STDOUT)을 사용하는 프로그램이면 
-<br>어떤 언어로 작성했든 Mapper와 Reducer로 사용할 수 있게 해주는 Hadoop 기본 유틸리티이다.
+<br>어떤 언어로 작성했든 Mapper와 Reducer로 사용할 수 있게 해주는 Hadoop 기본 유틸리티다.
 
 ## 주요 특징
 - Java로 프로그램 짤 필요 없이, Python, Shell, Perl, Ruby 같은 스크립트 언어로 MapReduce 작성 가능하다.

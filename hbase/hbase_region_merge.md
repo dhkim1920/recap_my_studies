@@ -2,7 +2,7 @@
 
 ## 기본 원칙: Adjacent Region 병합만 허용
 - 기본적으로 HBase는 **인접한 Region 간에만 병합을 허용**한다.
-- **조건**: 하나의 Region의 End Key가 다른 Region의 Start Key와 정확히 일치해야 함
+- **조건**: 하나의 Region의 End Key가 다른 Region의 Start Key와 정확히 일치해야 한다.
 
 ## Non-Adjacent Region 병합 (강제)
 - `merge_region` 명령어의 세 번째 인자에 `true`를 전달하면 **강제로 병합 가능**

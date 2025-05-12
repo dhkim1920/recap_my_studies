@@ -10,7 +10,7 @@ HDFS에서는 클라이언트와의 통신을 처리하기 위해 NameNode와 Da
 ### 1. NameNode handler 과다 설정 
 (`dfs.namenode.handler.count`)
 - 해당 값은 **NameNode의 RPC 요청 처리 스레드 수**를 결정한다.
-- 다라서 과도하게 높이면 NameNode는 더 많은 요청을 동시에 처리하려고 시도한다.
+- 따라서 과도하게 높이면 NameNode는 더 많은 요청을 동시에 처리하려고 시도한다.
 - 그러나 **DataNode가 충분히 응답하지 못할 경우**, 전체 시스템 병목 현상이 발생한다.
 
 ### 2. NameNode handler 부족
@@ -45,7 +45,7 @@ HDFS에서는 클라이언트와의 통신을 처리하기 위해 NameNode와 Da
 ### 모니터링 지표
 - RPC 큐 길이를 확인 한다.
 - RPC 처리 시간을 확인 한다.
-- DataNode의 heart beat 과 블록 리포트 지연이 없는지 본다.
+- DataNode의 heartbeat 과 블록 리포트 지연이 없는지 본다.
 
 ### 조정 방법
 - 클러스터 리소스와 부하 상태를 모니터링한 후, 핸들러 수를 **균형 있게 설정**

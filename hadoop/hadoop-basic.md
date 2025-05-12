@@ -21,7 +21,7 @@
   - **NameNode**: 메타데이터 관리 (파일 이름, 블록 위치 등)  
   - **DataNode**: 실제 데이터 블록 저장  
 - **복제 정책**: 기본 복제 수는 3으로, 데이터 안정성 확보  
-  - hadoop3 부터 Erasure Coding 제공하여 1.5개만 유지가능, 복구가 느림, 자주쓰는 데이터는 안하는게 좋음
+  - hadoop3 부터 Erasure Coding 제공하여 1.5개만 유지 가능, 복구가 느림, 자주쓰는 데이터는 안하는게 좋음
 - **내결함성**: 노드 장애 시 복제본을 통해 데이터 복구  
 ![hdfs_architecture.png](hdfs_architecture.png)
 
@@ -31,7 +31,7 @@
 3. 복제본을 여러 노드에 저장하여 **데이터 안정성** 보장  
 
 ### Hadoop 2.x NameNode 메타데이터 관리
-- NameNode는 파일 메타데이터를 **메모리(RAM)에 적재**해서 관리
+- NameNode는 파일 메타데이터를 **메모리에 적재**해서 관리
 - **파일 수와 디렉토리 수가 많아 질수록 NameNode 메모리 요구량이 증가**
 - 디스크에 **fsimage**, **editlog** 파일로 메타데이터를 저장(Checkpoint)
   - 위치 설정: `dfs.namenode.name.dir` 

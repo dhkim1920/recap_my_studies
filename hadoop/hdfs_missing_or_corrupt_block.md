@@ -45,7 +45,7 @@ hdfs fsck / -move
 hdfs fsck / -delete
 ```
 
-※ Missing Block은 소스 데이터로 재생성하거나, 백업에서 복원하는 수밖에 없음
+> ※ Missing Block은 소스 데이터로 재생성하거나, 백업에서 복원하는 수밖에 없음
 
 ---
 
