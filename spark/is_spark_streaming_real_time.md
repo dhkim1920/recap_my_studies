@@ -2,7 +2,7 @@
 
 ## Spark Streaming (DStream 기반)
 - Spark Streaming은 실시간 입력 데이터를 수신하여 **micro-batch**로 나눈 후 처리한다.
-- 이로 인해 100ms 수준의 지연(latency)이 발생한다.
+- 이로 인해 100ms 수준의 latency가 발생한다.
 
 ## Structured Streaming
 - Structured Streaming은 Spark의 최신 스트리밍 엔진이다.

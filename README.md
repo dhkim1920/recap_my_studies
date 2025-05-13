@@ -80,6 +80,7 @@
 - [kafka_basic.md](kafka/kafka_basic.md)
 - [kafka_commit_control.md](kafka/kafka_commit_control.md)
 - [kafka_partition_guide.md](kafka/kafka_partition_guide.md)
+- [kafka_sasl.md](kafka/kafka_sasl.md)
 
 ## phoenix
 

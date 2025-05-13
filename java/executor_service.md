@@ -2,18 +2,18 @@
 ## ExecutorService
 
 - Java에서 스레드를 관리하는 인터페이스
-- 직접 스레드를 생성하지 않고, **작업 단위(Runnable, Callable)**를 제출하면 실행
-- `java.util.concurrent.ExecutorService` 패키지에 존재
+- 직접 스레드를 생성하지 않고, **작업 단위(Runnable, Callable)** 를 제출하면 실행
+- `java.util.concurrent.ExecutorService` 패키지에 있다.
 
 ### 주요 특징
 
-| 항목 | 설명 |
-|:-----|:-----|
-| 스레드 관리 | 스레드를 직접 만들고 종료하지 않아도 됨 |
-| 작업 제출 | Runnable, Callable 제출 가능 |
-| 비동기 실행 | 작업을 비동기로 실행하고 Future로 결과 받음 |
+| 항목 | 설명                                           |
+|:-----|:---------------------------------------------|
+| 스레드 관리 | 스레드를 직접 만들고 종료하지 않아도 됨                       |
+| 작업 제출 | Runnable, Callable 제출 가능                     |
+| 비동기 실행 | 작업을 비동기로 실행하고 Future로 결과 받음                  |
 | 작업 종료 제어 | shutdown(), shutdownNow()로 graceful/강제 종료 지원 |
-| 리소스 최적화 | 스레드 재사용(pooling)으로 성능 향상 |
+| 리소스 최적화 | 스레드 pooling으로 성능 향상                          |
 
 ### 주요 메서드
 
@@ -57,13 +57,13 @@ Integer result = future.get(); // 결과 30
 
 - 최대 nThreads 개수만큼 스레드 생성
 - 요청이 오면 가능한 스레드에 작업 할당
-- 남는 스레드 없으면 큐(queue)에 쌓음
+- 남는 스레드 없으면 queue에 쌓음
 - 스레드가 작업 끝내면 큐에서 다음 작업 처리
 
 ## newCachedThreadPool()
 
 - 필요한 만큼 새로운 스레드를 생성
-- idle(대기) 상태 스레드는 재사용
+- idle 상태 스레드는 재사용
 - 스레드 개수 제한 없음
 
 ## FixedThreadPool vs CachedThreadPool
