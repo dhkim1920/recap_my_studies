@@ -68,6 +68,7 @@
 - [executor_service.md](java/executor_service.md)
 - [future_completablefuture.md](java/future_completablefuture.md)
 - [gradle_vs_maven.md](java/gradle_vs_maven.md)
+- [java_functional_interfaces.md](java/java_functional_interfaces.md)
 - [java_garbage_collector.md](java/java_garbage_collector.md)
 - [java_memory_structure.md](java/java_memory_structure.md)
 - [java_serializable.md](java/java_serializable.md)
@@ -107,6 +108,7 @@
 - [javasparkcontext_sparksession_summary.md](spark/javasparkcontext_sparksession_summary.md)
 - [javastreamingcontext_vs_javasparkcontext.md](spark/javastreamingcontext_vs_javasparkcontext.md)
 - [spark_basic.md](spark/spark_basic.md)
+- [spark_catalyst_tungsten.md](spark/spark_catalyst_tungsten.md)
 - [spark_gc_settings.md](spark/spark_gc_settings.md)
 - [spark_partitioning_vs_bucketing.md](spark/spark_partitioning_vs_bucketing.md)
 - [spark_persist_cache.md](spark/spark_persist_cache.md)
@@ -122,3 +124,4 @@
 ## zookeeper
 
 - [zookeeper-session-id-negative-issue.md](zookeeper/zookeeper-session-id-negative-issue.md)
+- [zookeeper_basics.md](zookeeper/zookeeper_basics.md)
