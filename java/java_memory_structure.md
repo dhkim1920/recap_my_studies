@@ -30,7 +30,7 @@
 - GC(Garbage Collector)에 의해 정리됨
 - 모든 스레드가 공유
 
-### 3. Stack Area
+### 3. Stack Area (Call stack)
 
 - 메서드 호출 시 지역변수, 매개변수 저장
 - 메서드 실행이 끝나면 자동으로 해제

@@ -29,12 +29,16 @@
 
 - 클래스 메타데이터 저장 (Java 7 이하)
 - Java 8부터는 **Metaspace**로 대체
+- PermGen의 문제점
+  - 크기가 고정됨: 애플리케이션마다 클래스 수가 다르지만 PermGen은 크기 조절이 어려움
+  - OutOfMemoryError 자주 발생: 클래스 로딩이 많거나 리플렉션 사용이 많은 앱에서는 PermGen OOM이 잦았음
 
 ### Metaspace
 
 - PermGen 대체
 - Native Memory에 저장 (JVM 외부 메모리)
 - 클래스 메타데이터, 리플렉션 관련 정보 저장
+- 위치는 Native Memory이나 클래스가 더 이상 참조되지 않으면 GC가 회수함
 
 ## 4. Reachable vs Unreachable
 
@@ -60,6 +64,14 @@
 - Old 영역이 꽉 차면 발생
 - Old 영역의 불필요한 객체를 제거
 - 시스템 성능에 큰 영향을 줄 수 있음
+
+### Full GC
+
+- **전체 힙 영역(GC Root부터 Old, Young, Metaspace까지 모두)** 을 대상으로 수행
+- **항상 STW** 발생 → 애플리케이션 일시 중단
+- **메모리 compaction** 수행 → 단편화 해결
+- **불필요한 클래스 Metaspace도 정리**
+- 일반적으로 **Old 영역 부족** 또는 **단편화**, **System.gc() 호출**, **클래스 언로딩 조건 충족**
 
 # 요약
 
@@ -91,6 +103,7 @@
 - 특징: Old 영역 동시 스캔
 - 장점: 짧은 Stop-the-World
 - 단점: CPU 많이 사용, 메모리 파편화
+  - CMS는 Old 영역을 compacting하지 않음, 살아있는 객체를 그 자리에 남겨둔 채 죽은 객체만 제거한다. (파편화 발생)
 - 사용: 짧은 응답 시간 요구 시스템
 
 ### 4. G1 GC (Garbage-First)
