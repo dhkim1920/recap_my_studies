@@ -31,6 +31,7 @@
 
 - [encryption.md](cs/encryption.md)
 - [network_basic.md](cs/network_basic.md)
+- [semaphore_mutex.md](cs/semaphore_mutex.md)
 - [ssl_tls.md](cs/ssl_tls.md)
 - [utf_8_and_endian.md](cs/utf_8_and_endian.md)
 
@@ -48,6 +49,7 @@
 - [hdfs_block_size.md](hadoop/hdfs_block_size.md)
 - [hdfs_file_deletion.md](hadoop/hdfs_file_deletion.md)
 - [hdfs_handler_configuration_analysis.md](hadoop/hdfs_handler_configuration_analysis.md)
+- [hdfs_journalnode_splitbrain.md](hadoop/hdfs_journalnode_splitbrain.md)
 - [hdfs_missing_or_corrupt_block.md](hadoop/hdfs_missing_or_corrupt_block.md)
 - [hdfs_volume_policy.md](hadoop/hdfs_volume_policy.md)
 
@@ -62,6 +64,10 @@
 - [hbase_region_merge.md](hbase/hbase_region_merge.md)
 - [hbase_region_split_recovery.md](hbase/hbase_region_split_recovery.md)
 - [hbase_rowkey_design.md](hbase/hbase_rowkey_design.md)
+
+## iceberg
+
+- [iceberg_basic.md](iceberg/iceberg_basic.md)
 
 ## java
 
