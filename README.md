@@ -126,6 +126,7 @@
 ## yarn
 
 - [default-vs-dominant-resource-calculator.md](yarn/default-vs-dominant-resource-calculator.md)
+- [yarn_user_mapping.md](yarn/yarn_user_mapping.md)
 
 ## zookeeper
 
