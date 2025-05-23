@@ -45,6 +45,7 @@
 ## hadoop
 
 - [hadoop-basic.md](hadoop/hadoop-basic.md)
+- [hadoop_namenode_rpc_monitoring.md](hadoop/hadoop_namenode_rpc_monitoring.md)
 - [hadoop_streaming.md](hadoop/hadoop_streaming.md)
 - [hdfs_block_size.md](hadoop/hdfs_block_size.md)
 - [hdfs_file_deletion.md](hadoop/hdfs_file_deletion.md)
@@ -108,6 +109,8 @@
 ## spark
 
 - [Tuning_Apache_Spark.md](spark/Tuning_Apache_Spark.md)
+- [broadcast_vs_accumulator.md](spark/broadcast_vs_accumulator.md)
+- [foreach_vs_foreachPartition_async.md](spark/foreach_vs_foreachPartition_async.md)
 - [is_spark_streaming_real_time.md](spark/is_spark_streaming_real_time.md)
 - [javainputdstream_kafkautils_combined.md](spark/javainputdstream_kafkautils_combined.md)
 - [javardd.md](spark/javardd.md)
