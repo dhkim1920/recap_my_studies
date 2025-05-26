@@ -29,8 +29,12 @@
 
 ## cs
 
+- [computer_system_architecture_detailed.md](cs/computer_system_architecture_detailed.md)
+- [data_structures_detailed.md](cs/data_structures_detailed.md)
+- [database_detailed.md](cs/database_detailed.md)
 - [encryption.md](cs/encryption.md)
 - [network_basic.md](cs/network_basic.md)
+- [operating_system_filesystem_detailed.md](cs/operating_system_filesystem_detailed.md)
 - [semaphore_mutex.md](cs/semaphore_mutex.md)
 - [ssl_tls.md](cs/ssl_tls.md)
 - [utf_8_and_endian.md](cs/utf_8_and_endian.md)
@@ -72,6 +76,7 @@
 
 ## java
 
+- [dynamic_object_creation_java.md](java/dynamic_object_creation_java.md)
 - [executor_service.md](java/executor_service.md)
 - [future_completablefuture.md](java/future_completablefuture.md)
 - [gradle_vs_maven.md](java/gradle_vs_maven.md)
