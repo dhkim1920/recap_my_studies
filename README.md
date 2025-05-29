@@ -20,6 +20,9 @@
 
 - [MSK.md](aws/MSK.md)
 - [aws_sdk_comparison.md](aws/aws_sdk_comparison.md)
+## aws/hbase
+
+- [EMR_HBase_Graceful_Scaling.md](aws/hbase/EMR_HBase_Graceful_Scaling.md)
 - [vpc.md](aws/vpc.md)
 ## bigdata
 
@@ -42,6 +45,7 @@
 - [docker-compose_mount_volume_many_files.md](docker/docker-compose_mount_volume_many_files.md)
 - [docker-compose_zombie_process.md](docker/docker-compose_zombie_process.md)
 - [docker.md](docker/docker.md)
+- [docker_hardened_images.md](docker/docker_hardened_images.md)
 - [dockerfile_execution_commands.md](docker/dockerfile_execution_commands.md)
 ## hadoop
 
@@ -67,11 +71,15 @@
 - [hbase_major_compaction_file_size_vs_count.md](hbase/hbase_major_compaction_file_size_vs_count.md)
 - [hbase_region_calculation_by_memory.md](hbase/hbase_region_calculation_by_memory.md)
 - [hbase_region_merge.md](hbase/hbase_region_merge.md)
+- [hbase_region_split_incomplete_recovery.md](hbase/hbase_region_split_incomplete_recovery.md)
 - [hbase_region_split_recovery.md](hbase/hbase_region_split_recovery.md)
 - [hbase_rowkey_design.md](hbase/hbase_rowkey_design.md)
+- [hdfs_block_loss_hbase_behavior.md](hbase/hdfs_block_loss_hbase_behavior.md)
 ## iceberg
 
+- [apache_iceberg_use_cases.md](iceberg/apache_iceberg_use_cases.md)
 - [iceberg_basic.md](iceberg/iceberg_basic.md)
+- [rdbms_vs_iceberg_schema_evolution.md](iceberg/rdbms_vs_iceberg_schema_evolution.md)
 ## java
 
 - [dynamic_object_creation_java.md](java/dynamic_object_creation_java.md)
@@ -94,6 +102,7 @@
 ## phoenix
 
 - [phoenix_query_hints.md](phoenix/phoenix_query_hints.md)
+- [phoenix_sqlline_comparison.md](phoenix/phoenix_sqlline_comparison.md)
 - [salt.md](phoenix/salt.md)
 ## python
 
