@@ -19,6 +19,7 @@
 ## aws
 
 - [MSK.md](aws/MSK.md)
+- [aws_gp2_performance.md](aws/aws_gp2_performance.md)
 - [aws_sdk_comparison.md](aws/aws_sdk_comparison.md)
 ## aws/hbase
 
@@ -79,6 +80,8 @@
 
 - [apache_iceberg_use_cases.md](iceberg/apache_iceberg_use_cases.md)
 - [iceberg_basic.md](iceberg/iceberg_basic.md)
+- [iceberg_datafile_notes.md](iceberg/iceberg_datafile_notes.md)
+- [iceberg_partition_write_strategy.md](iceberg/iceberg_partition_write_strategy.md)
 - [rdbms_vs_iceberg_schema_evolution.md](iceberg/rdbms_vs_iceberg_schema_evolution.md)
 ## java
 
@@ -86,11 +89,12 @@
 - [executor_service.md](java/executor_service.md)
 - [future_completablefuture.md](java/future_completablefuture.md)
 - [gradle_vs_maven.md](java/gradle_vs_maven.md)
+- [java_concurrency.md](java/java_concurrency.md)
 - [java_functional_interfaces.md](java/java_functional_interfaces.md)
 - [java_garbage_collector.md](java/java_garbage_collector.md)
 - [java_memory_structure.md](java/java_memory_structure.md)
+- [java_semaphore.md](java/java_semaphore.md)
 - [java_serializable.md](java/java_serializable.md)
-- [synchronized_reentrantlock.md](java/synchronized_reentrantlock.md)
 - [volatile.md](java/volatile.md)
 ## kafka
 
