@@ -36,7 +36,7 @@
 | **Region**          | 테이블의 일부를 구성하는 단위로, 특정 범위의 로우를 포함하며, 자동으로 분할 및 병합됨             |
 | **ZooKeeper**       | 분산 코디네이션 서비스로, 클러스터의 상태 관리 및 구성 정보 유지, HMaster와 RegionServer 간의 협업 지원 |
 
-![img.png](img.png)
+![img.png](images/hbase_structure.png)
 
 ## HBase 데이터 모델
 

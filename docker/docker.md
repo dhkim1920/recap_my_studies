@@ -14,7 +14,7 @@
 | 보안 수준       | 커널 공유로 인해 보안 취약점이 호스트와 컨테이너에 동시에 영향을 줄 수 있음 | 각 VM이 독립된 커널을 가지므로 높은 보안성        |
 | 사용 사례       | **마이크로서비스**, CI/CD 파이프라인, 경량 애플리케이션 | **다양한 OS 테스트**, 기존 서버 애플리케이션 호스팅 |
 
-![container_vs_vm.png](container_vs_vm.png)
+![container_vs_vm.png](images/container_vs_vm.png)
 
 ### 추가 
 

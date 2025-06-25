@@ -23,7 +23,7 @@
 - **복제 정책**: 기본 복제 수는 3으로, 데이터 안정성 확보  
   - hadoop3 부터 Erasure Coding 제공하여 1.5개만 유지 가능, 복구가 느림, 자주쓰는 데이터는 안하는게 좋음
 - **내결함성**: 노드 장애 시 복제본을 통해 데이터 복구  
-![hdfs_architecture.png](hdfs_architecture.png)
+![hdfs_architecture.png](images/hdfs_architecture.png)
 
 #### HDFS 동작 흐름
 1. 사용자가 데이터를 업로드하면 **NameNode**가 메타데이터를 관리  
@@ -89,7 +89,7 @@
 | **NodeManager**      | 각 노드의 리소스를 관리하며, 컨테이너(Container)를 실행                                      |
 | **ApplicationMaster**| 애플리케이션 별로 실행되며, 작업을 계획하고 관리                                         |
 
-![yarn_architecture.png](yarn_architecture.png)
+![yarn_architecture.png](images/yarn_architecture.png)
 #### YARN 동작 흐름
 1. 애플리케이션 제출 -> **ResourceManager**가 **ApplicationMaster**를 할당  
 2. **ApplicationMaster**가 작업을 분할하여 **NodeManager**에게 실행 요청  
