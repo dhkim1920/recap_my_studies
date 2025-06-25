@@ -1,7 +1,7 @@
 
 # HBase RegionServer Compaction 시 성능은 어떻게 될까?
 - 여기서는 Compaction이 발생했을 때 읽기와 쓰기의 성능을 알아본다.
-- 또한 Compaction 하기 전, 하는 중, 완료 후 어떻게 성능이 변화하는지도 알아보자
+- 또한 Compaction 전, 중, 후 어떻게 성능이 변화하는지도 알아보자
 
 ---
 

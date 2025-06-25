@@ -2,7 +2,7 @@
 
 ## 리전 분할(Region Split) 개요
 
-HBase에서 Region Split은 하나의 Region이 너무 커졌을 때 자동으로 두 개로 분할하는 과정입니다.
+HBase에서 Region Split은 하나의 Region이 너무 커졌을 때 자동으로 두 개로 분할하는 것을 말한다.
 
 ### Split 진행 순서
 
@@ -54,7 +54,6 @@ HBase에서 Region Split은 하나의 Region이 너무 커졌을 때 자동으�
 ---
 
 ## 결론
-
-이 문제는 **RegionServer failover 도중 분할이 완료되지 않아 발생한 split-in-progress 상태**입니다.  
-`.splitting` 상태 파일이 정상 삭제되지 않은 경우, 메타 정합성 이슈로 이어질 수 있으며,  
-**WAL 확인과 수동 조치를 통해 Region 복구가 필요합니다.**
+- 이 문제는 **RegionServer failover 도중 분할이 완료되지 않아 발생한 split-in-progress 상태**로 인해 발생한다.
+- `.splitting` 상태 파일이 정상 삭제되지 않은 경우, 메타 정합성 이슈로 이어질 수 있으며, **WAL 확인과 수동 조치를 통해 Region 복구가 필요하다.**
+- 수동으로 assign 하는건 생각보다 쉽지 않으므로 failover 때 발생하는 건 어쩔수 없지만, scale in 할때 region server 제거 시 천천히 하자! 

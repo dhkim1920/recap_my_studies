@@ -32,7 +32,7 @@
   - JVM 힙 외부(off-heap)에서 동작
   - 대용량 메모리를 사용할 수 있고, GC(Garbage Collection) 영향이 적음
   - 보통 LruBlockCache와 함께 사용됨
-    - Bloom 필터 및 인덱스 → LruBlockCache
+    - Bloom filter 및 index → LruBlockCache
     - 데이터 블록 → BucketCache
 
 > 참고) off-heap이란 JVM Heap 메모리 바깥의 운영체제 메모리를 직접 사용하는 것

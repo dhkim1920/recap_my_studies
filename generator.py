@@ -1,7 +1,9 @@
 import os
 
 
-def generate_readme(root_path=".", entry_exclude=[]):
+def generate_readme(root_path=".", entry_exclude=None):
+    if entry_exclude is None:
+        entry_exclude = []
     readme_path = os.path.join(root_path, "README.md")
     contents = ["# 문서 목록\n"]
 
