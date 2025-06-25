@@ -6,7 +6,7 @@
   - MR의 한계: 디스크 기반으로 속도가 느림, 중간 작업이나 공유를 위해 DISK를 사용하므로 I/O를 많이 사용함
 
 ## 구조
-![img.png](spark_struct.png)
+![img.png](images/spark_struct.png)
 ### **Spark 구조 설명**
 
 #### **Driver Program**

@@ -2,7 +2,7 @@
 
 ## 1. YARN 사용자 (Application Owner)
 - `spark-submit`을 실행한 **리눅스 사용자 계정**이 YARN에서의 application owner로 인식된다.
-- YARN ResourceManager UI의 `User` 필드에 해당 계정명을 확인 할 수 있따.
+- YARN ResourceManager UI의 `User` 필드에 해당 계정명을 확인 할 수 있다.
 - 즉, YARN은 리눅스 계정 기반으로 동작
 
 ## 2. HDFS 사용자 (권한 판별 기준)

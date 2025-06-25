@@ -5,7 +5,7 @@ VPC는 AWS 내에서 사용자 정의 가능한 논리적으로 격리된 가상
 온프레미스 데이터 센터와 유사한 네트워크 환경을 구축할 수 있다.
 
 # 주요 구성 요소
-![vpc_example.jpg](vpc_example.jpg)
+![vpc_example.jpg](images/vpc_example.jpg)
 ## VPC 및 subnet
 
 - **VPC**:  
