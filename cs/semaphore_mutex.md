@@ -1,4 +1,4 @@
-# Semaphore와 뮤텍스Mutex
+# Semaphore와 Mutex
 
 ## 개요
 - **운영체제나 멀티스레드 환경에서의 동기화 도구**
