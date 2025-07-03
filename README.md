@@ -65,6 +65,7 @@
 - [yarn_user_mapping.md](hadoop/yarn/yarn_user_mapping.md)
 ## hbase
 
+- [hbase_balancing.md](hbase/hbase_balancing.md)
 - [hbase_basic.md](hbase/hbase_basic.md)
 - [hbase_block_cache.md](hbase/hbase_block_cache.md)
 - [hbase_compaction_basic.md](hbase/hbase_compaction_basic.md)
