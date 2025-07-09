@@ -8,13 +8,13 @@
 
 ### 활성화 여부
 
-- `hbase.balancer.enabled = true` 시 자동 밸런싱 활성화됨
+- `hbase.balancer.enabled = true` 시 자동 밸런싱 활성화된다.
 - 기본값은 true (활성화 상태)
 
 ### 동작 방식
 
 - HMaster가 RegionServer 간 Region 개수 또는 Region 크기를 기준으로 불균형 여부를 평가
-- 평가 결과에 따라 특정 Region을 다른 서버로 이동시킴
+- 평가 결과에 따라 특정 Region을 다른 서버로 이동시킨다.
 
 ### 예시 설정
 
@@ -24,30 +24,31 @@ hbase.balancer.period = 300000          # 5분 주기
 hbase.balancer.max.balancing = 0.1      # 이동 비율 제한 (10%)
 ```
 
-- 위 설정은 RegionServer 간 Region 개수 또는 용량이 차이 날 경우 자동으로 재분배함
+- 위 설정은 RegionServer 간 Region 개수 또는 용량이 차이 날 경우 자동으로 재분배시킨다.
+
 ---
-## HDFS 디스크 리밸런싱과의 동시 실행 금지 이유
 
-HBase의 Region 밸런서와 HDFS의 블록 밸런서는 **호환되지 않음**으로 명시되어 있다.
+## HDFS disk rebalancer와 같이 사용해도 될까?
 
-### 공식 문서 내용
-> HBase Balancer와 HDFS Balancer는 호환되지 않습니다.
+결론부터 말하면, HBase의 Region Balancer와 HDFS의 블록 Balancer는 **호환되지 않음**으로 명시되어 있다.
 
-- HDFS Balancer는 HDFS 블록을 DataNode 간에 고르게 분산시키려 합니다. 
-- 반면, HBase는 region 분할이나 장애 발생 후 compaction을 통해 locality(지역성)를 복구하는 방식에 의존합니다. 
-- 이 두 종류의 리밸런싱은 함께 사용하면 잘 작동하지 않습니다.
+## HDFS Balancer와 HBase Balancer의 차이
 
-### 이유
-1. **리소스 충돌**
-   - 두 리밸런서가 동시에 네트워크, 디스크 IO를 사용할 경우 성능 저하 및 충돌 발생 가능
+### HDFS Balancer의 동작 방식
+- HDFS Balancer는 블록 단위로만 작동하며, HDFS 내부의 블록 분포를 평준화하기 위해 동작한다.
 
-2. **Region 이동과 블록 복제의 충돌**
-   - HBase Region 이동 중 해당 HFile의 블록이 HDFS balancer에 의해 동시에 이동되면, RegionServer가 해당 파일을 원격으로 읽게 되어 locality가 깨짐
+### HBase Balancer의 동작 방식
+- Region 개수 또는 용량 차이, Locality 등을 기준으로 Region을 재분배한다.
 
-3. **Compaction 등의 내부 처리와 충돌**
-   - HBase는 compaction 중 HFile을 재작성하는데, 이 시점에 HDFS 블록도 이동되면 내부 오류나 성능 저하가 발생할 수 있음
+## 결론
+- 수행은 가능하나 **권장되지는 않는다**.
 
-### 공식 권장
+## 이유
+- `hbase:meta`는 Region의 시작 키, 종료 키, 테이블 이름, 할당된 RegionServer 정보를 저장하며, HFile의 DataNode 위치는 저장하지 않는다.
+- 따라서 HBase 데이터가 손상되지는 않는다.
+- 그러나 두 Balancer의 목적이 다르며, 특히 HDFS Balancer 실행 시 HFile 블록이 이동하면서 HBase의 Locality가 깨진다.
+- 이로 인해 RegionServer가 원격 DataNode에서 데이터를 읽게 되어 **성능 저하**가 발생할 수 있다.
 
-- 두 리밸런서는 **동시에 실행하지 말 것**
-- 순차적으로 실행하고, 리밸런싱 시점에 HBase 트래픽이 적을 때 수행 권장
+## 그래도 돌려야 한다면?
+- HDFS Balancer 수행 후, **HBase Major Compaction**을 통해 Locality를 회복하는 것이 필요하다.
+  - 이럴경우 HFile이 병합되면서 다시 Block이 새로기록되니 근본적인 원인은 아닐 듯?
