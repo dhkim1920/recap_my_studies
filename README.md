@@ -37,9 +37,13 @@
 - [database_detailed.md](cs/database_detailed.md)
 - [encryption.md](cs/encryption.md)
 - [network_basic.md](cs/network_basic.md)
+## cs/oop
+
+- [OOP_Myths_and_Truths.md](cs/oop/OOP_Myths_and_Truths.md)
 - [operating_system_filesystem_detailed.md](cs/operating_system_filesystem_detailed.md)
 - [semaphore_mutex.md](cs/semaphore_mutex.md)
 - [ssl_tls.md](cs/ssl_tls.md)
+- [tdd.md](cs/tdd.md)
 - [utf_8_and_endian.md](cs/utf_8_and_endian.md)
 ## docker
 
@@ -76,6 +80,7 @@
 - [hbase_region_split_incomplete_recovery.md](hbase/hbase_region_split_incomplete_recovery.md)
 - [hbase_region_split_recovery.md](hbase/hbase_region_split_recovery.md)
 - [hbase_rowkey_design.md](hbase/hbase_rowkey_design.md)
+- [hbase_wal_deletion.md](hbase/hbase_wal_deletion.md)
 - [hdfs_block_loss_hbase_behavior.md](hbase/hdfs_block_loss_hbase_behavior.md)
 ## iceberg
 
@@ -119,6 +124,7 @@
 - [python_jit_summary.md](python/python_jit_summary.md)
 - [python_memory_management_gc.md](python/python_memory_management_gc.md)
 - [python_memory_structure.md](python/python_memory_structure.md)
+- [terminate_on_timeout_with_subprocess_group.md](python/terminate_on_timeout_with_subprocess_group.md)
 ## spark
 
 - [Tuning_Apache_Spark.md](spark/Tuning_Apache_Spark.md)
