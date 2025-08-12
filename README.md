@@ -125,6 +125,9 @@
 - [python_memory_management_gc.md](python/python_memory_management_gc.md)
 - [python_memory_structure.md](python/python_memory_structure.md)
 - [terminate_on_timeout_with_subprocess_group.md](python/terminate_on_timeout_with_subprocess_group.md)
+## ranger
+
+- [basic.md](ranger/basic.md)
 ## spark
 
 - [Tuning_Apache_Spark.md](spark/Tuning_Apache_Spark.md)
