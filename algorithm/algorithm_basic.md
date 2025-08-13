@@ -42,6 +42,11 @@ None은 파이썬에서 하나의 객체로 취급되기 때문에 `is`를 사�
 - 치환: `str.replace(old, new)`
 - 합: `sum(iterable)`
 - 최대, 최소: `max(iterable)`, `min(iterable)`
+- 문자열 순회: `enumerate(str)`
+  - ```python
+    for idx, ch in enumerate(word):
+        print(idx, ch)
+    ```
 
 ### 수학
 - 절댓값: `abs(x)`
