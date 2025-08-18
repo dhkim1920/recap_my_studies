@@ -3,6 +3,7 @@
 ## ai
 
 - [ai_application_and_utilization.md](ai/ai_application_and_utilization.md)
+- [pandas_basic.md](ai/pandas_basic.md)
 ## airflow
 
 - [airflow_basic.md](airflow/airflow_basic.md)
