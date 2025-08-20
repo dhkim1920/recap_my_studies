@@ -4,6 +4,7 @@
 
 - [ai_application_and_utilization.md](ai/ai_application_and_utilization.md)
 - [data_analysis_basic.md](ai/data_analysis_basic.md)
+- [ml_summary.md](ai/ml_summary.md)
 - [pandas_basic.md](ai/pandas_basic.md)
 ## airflow
 
