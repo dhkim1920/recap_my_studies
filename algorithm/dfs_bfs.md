@@ -29,19 +29,17 @@ dfs(target_graph, 1, [False] * 9)
 ```python
 def dfs_stack(graph, v, visited):
     stack = deque([v])
-    visited[v] = True
-    print(v, end=' ')
-
+    
     while stack:
-        current = stack[-1]
-        for i in graph[current]:
-            if not visited[i]:
-                stack.append(i)
-                visited[i] = True
-                print(i, end=' ')
-                break
-        else:
-            stack.pop()
+        current = stack.pop()
+        
+        if not visited[current]:
+            visited[current] = True
+            print(current, end=' ')
+            
+            for i in reversed(graph[current]):
+                if not visited[i]:
+                    stack.append(i)
 
 dfs_stack(target_graph, 1, [False] * 9)
 ```
