@@ -32,6 +32,8 @@
 
 - [basic.md](bigdata/basic.md)
 - [column_vs_row_db.md](bigdata/column_vs_row_db.md)
+- [datalake.md](bigdata/datalake.md)
+- [datawarehouse.md](bigdata/datawarehouse.md)
 - [jackson_vs_gson_comparison.md](bigdata/jackson_vs_gson_comparison.md)
 ## cs
 
