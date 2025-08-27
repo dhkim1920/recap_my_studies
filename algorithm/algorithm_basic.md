@@ -30,6 +30,19 @@ None은 파이썬에서 하나의 객체로 취급되기 때문에 `is`를 사�
 - 입력 타입 변환: `int(input())`
 - 여러개 띄어 입력`map(int, input().split())`
 - 여러 줄 입력: `[map(int, input().split()) for _ in range(N)]`
+- 그래프 만들기
+  - ```python
+    graph = [[] for _ in range(N + 1)]
+    edges = []
+  
+    for _ in range(M):
+        a, b = map(int, input().split())
+        edges.append((a, b))
+  
+    for a, b in edges:
+        graph[a].append(b)
+        graph[b].append(a)
+    ```
 
 ### 문자열 처리
 - 소문자 변환:`lower()`
