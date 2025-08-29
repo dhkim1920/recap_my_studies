@@ -29,19 +29,17 @@ dfs(target_graph, 1, [False] * 9)
 ```python
 def dfs_stack(graph, v, visited):
     stack = deque([v])
-    visited[v] = True
-    print(v, end=' ')
-
+    
     while stack:
-        current = stack[-1]
-        for i in graph[current]:
-            if not visited[i]:
-                stack.append(i)
-                visited[i] = True
-                print(i, end=' ')
-                break
-        else:
-            stack.pop()
+        current = stack.pop()
+        
+        if not visited[current]:
+            visited[current] = True
+            print(current, end=' ')
+            
+            for i in reversed(graph[current]):
+                if not visited[i]:
+                    stack.append(i)
 
 dfs_stack(target_graph, 1, [False] * 9)
 ```
@@ -77,3 +75,13 @@ bfs(target_graph, 1, [False] * 9)
 - 최단 경로 탐색에 주로 사용 
   - 시작점에서부터 가까운 노드들을 순서대로 탐색하기 때문에, 목적지에 도착했을 때의 거리가 항상 최단 거리이기 때문
   - 모든 이동 비용이 동일한 경우(예: 백준 1697 숨바꼭질) BFS가 최단 거리를 보장
+
+---
+
+## 팁
+- 노드 값이 작은거 부터 처리하는 방법
+  - ```python
+    for i in range(1, N + 1):
+        graph[i].sort()
+    ```
+    위와 같이 대상 그래프를 정렬하면된다.
