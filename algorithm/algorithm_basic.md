@@ -78,6 +78,7 @@ None은 파이썬에서 하나의 객체로 취급되기 때문에 `is`를 사�
   - A약수의 개수: `(m+1) * (n+1)`
 - 올림
   - (x + y - 1) // y
+- 0, 1 toggle: `x = x ^ 1`, x 가 0이면 1로 1이면 0으로
 
 ### 양방향 큐 (Deque)
 - `from collections import deque`
