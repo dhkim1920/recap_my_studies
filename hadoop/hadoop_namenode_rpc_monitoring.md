@@ -70,12 +70,12 @@
 </property>
 ```
 
-### 5. Cost-based 우선순위 설정
+### 5. Cost-based 우선순위 설정 (3.3 부터 제공)
 - 연산 시간에 따라 가중치 기반 처리
 
 ```xml
 <property>
-  <name>ipc.8020.costprovder.impl</name>
+  <name>ipc.8020.cost-provider.impl</name>
   <value>org.apache.hadoop.ipc.WeightedTimeCostProvider</value>
 </property>
 ```
