@@ -14,6 +14,7 @@
 ## algorithm
 
 - [algorithm_basic.md](algorithm/algorithm_basic.md)
+- [backtracking.md](algorithm/backtracking.md)
 - [dfs_bfs.md](algorithm/dfs_bfs.md)
 - [dp.md](algorithm/dp.md)
 - [greedy.md](algorithm/greedy.md)
@@ -30,6 +31,7 @@
 - [vpc.md](aws/vpc.md)
 ## bigdata
 
+- [avro_parquet_orc.md](bigdata/avro_parquet_orc.md)
 - [basic.md](bigdata/basic.md)
 - [column_vs_row_db.md](bigdata/column_vs_row_db.md)
 - [datalake.md](bigdata/datalake.md)
@@ -38,6 +40,7 @@
 ## cs
 
 - [cloud_platform_architecture.md](cs/cloud_platform_architecture.md)
+- [compression_summary.md](cs/compression_summary.md)
 - [computer_system_architecture_detailed.md](cs/computer_system_architecture_detailed.md)
 - [data_structures_detailed.md](cs/data_structures_detailed.md)
 - [database_detailed.md](cs/database_detailed.md)
@@ -46,6 +49,7 @@
 ## cs/oop
 
 - [OOP_Myths_and_Truths.md](cs/oop/OOP_Myths_and_Truths.md)
+- [oop_solid.md](cs/oop/oop_solid.md)
 - [operating_system_filesystem_detailed.md](cs/operating_system_filesystem_detailed.md)
 - [semaphore_mutex.md](cs/semaphore_mutex.md)
 - [ssl_tls.md](cs/ssl_tls.md)
