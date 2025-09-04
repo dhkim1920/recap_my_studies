@@ -78,7 +78,7 @@ execution_date → data_interval 기반 모델로 전환
 ### 핵심 공식
 
 ```text
-실제 실행 시점 = start_date + n × schedule_interval  
+logical_date (≈ 실행 시각) = start_date + n × schedule_interval  
 처리할 데이터 구간 = [logical_date - schedule_interval, logical_date)
 ```
 

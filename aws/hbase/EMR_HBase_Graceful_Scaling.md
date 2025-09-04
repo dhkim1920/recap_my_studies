@@ -4,8 +4,7 @@
 > https://aws.amazon.com/ko/blogs/big-data/implement-amazon-emr-hbase-graceful-scaling/
 
 ## 개요
-
-EMR HBase 클러스터를 운영 할 때 scale-in 또는 scale-out을 할 수 있다. (예를 들어, 단기적인 병렬 연산 처리 전후)  
+EMR HBase 클러스터를 운영 할 때 scale-in 또는 scale-out을 할 수 있다. (예를 들어, 단기적인 병렬 연산을 위해)  
 이 때 EMR Task Node에서 HBase region server를 실행하게 되는데 스팟 인스턴스가 중단되면 region server도 예기치 않게 종료될 수 있다.
 
 WAL를 활성화하지 않은 HBase는 region server의 예기치 않은 종료 때문에 서버 복구 중 WAL split을 유발하게 되고 이는 부하를 가져온다.
@@ -19,9 +18,9 @@ WAL를 활성화하지 않은 HBase는 region server의 예기치 않은 종료 
   - region을 다른 region server로 이동시켜, 노드를 decommission할 때 WAL splits을 방지할 수 있다. (이동은 HDFS web에서 볼수 있다.)
 - decommission 우선 순위 상승 설정
 - region server들을 정상적으로 decommission
-- EMR 설정을 통해 task node에 region server가 프로비저닝되지 않도록 방지 
+- EMR **설정**을 통해 **task node에 region server가 프로비저닝되지 않도록 방지** 
   - 클러스터를 시작할 때 인스턴스 그룹 별로 software configurations를 설정한다. 
-- EMR Steps를 통해 task node에 region server가 프로비저닝되지 않도록 방지
+- EMR **Steps**를 통해 task node에 region server가 프로비저닝되지 않도록 방지
   - 기존 클러스터의 경우, task node에서 HBase region server를 종료하는 Step을 사용한다. 
   - 또는 태스크 인스턴스 그룹의 HBase storage `rootdir`를 재구성한다. (storage에 관여하지 않도록 설정을 변경하는거 같은데 이건 잘 모르겠음)
 
@@ -201,3 +200,5 @@ Action on failure:Continue
 ## 결론
 HBase graceful 지원 안하므로 써야한다.
 
+## 참고
+7.x에도 아직 미지원인 듯

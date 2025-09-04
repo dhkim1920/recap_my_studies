@@ -100,5 +100,5 @@ with DAG("template_dag", start_date=datetime(2023, 1, 1)) as dag:
 ```
 
 ### 영향이 큰가?
-- 보통 variables에 설정하는 값이 작은 값들로 DB I/O는 적을 실제 영향은 미비할 것이다. 
+- variables에 설정하는 값은 보통 크기가 작은 값들로 DB I/O에 실제 영향은 미비할 것이다. 
 그러나 dag가 많아지고 스케쥴이 자주 돌아간다면? 그러니 주의해서 나쁠건 없다. 
