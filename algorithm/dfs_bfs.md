@@ -86,3 +86,42 @@ bfs(target_graph, 1, [False] * 9)
         graph[i].sort()
     ```
     위와 같이 대상 그래프를 정렬하면된다.
+
+---
+
+## BFS 기반 감염 전파 알고리즘
+
+### 기본 BFS
+- 무가중치 그래프에서 전파 시간이 **1단계마다 동일할 때** 사용한다.
+- Queue 자료구조를 활용하여 레벨 단위로 탐색한다. (BFS 기반이니까)
+- 감염 전파 문제에서는 “초기 감염자(시작점)”을 큐에 넣고, 한 단계씩 감염을 확산시키며 **최단 감염 시간**을 구하는 방식이다.
+
+### 다중 시작점 BFS
+- 여러 개의 초기 감염자가 있을 경우, 이들을 모두 큐에 넣고 시작하면 된다.
+- 전파는 동시에 일어나므로 레벨 단위로 퍼져나가는 과정에서 거리 배열(감염 시간)을 갱신한다.
+
+```python
+from collections import deque
+
+def bfs_multi_source(n, adj, sources):
+    INF = 10**9
+    dist = [INF] * n
+    dq = deque()
+    for s in sources:
+        dist[s] = 0
+        dq.append(s)
+    while dq:
+        u = dq.popleft()
+        for v in adj[u]:
+            if dist[v] == INF:
+                dist[v] = dist[u] + 1
+                dq.append(v)
+    return dist
+```
+
+### 참고) BFS 외 다른 전파 모델
+- 아래 케이스들은 기본 감염전파보다 어려운 케이스다.
+- **다익스트라 (가중치 전파)**: 간선마다 감염 지연 시간이 다를 때 사용하며, BFS 대신 최소 힙 기반 우선순위 큐를 활용한다.
+- **임계값 모델 (부트스트랩 퍼콜레이션, 소문 문제)**: 일정 수 이상의 이웃이 감염되었을 때만 감염시킨다. BFS 변형으로 카운트 관리가 필요하다.
+- **확률 기반 모델 (Independent Cascade, Linear Threshold)**: 간선마다 전파 확률이 있거나, 이웃의 영향 합이 임계값을 넘으면 감염시킨다. 주로 시뮬레이션
+
