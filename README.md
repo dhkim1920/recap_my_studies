@@ -15,6 +15,7 @@
 
 - [algorithm_basic.md](algorithm/algorithm_basic.md)
 - [backtracking.md](algorithm/backtracking.md)
+- [data_structures_detailed.md](algorithm/data_structures_detailed.md)
 - [dfs_bfs.md](algorithm/dfs_bfs.md)
 - [dp.md](algorithm/dp.md)
 - [greedy.md](algorithm/greedy.md)
@@ -39,10 +40,11 @@
 - [jackson_vs_gson_comparison.md](bigdata/jackson_vs_gson_comparison.md)
 ## cs
 
+- [Authentication_and_Authorization.md](cs/Authentication_and_Authorization.md)
+- [RDB_keys.md](cs/RDB_keys.md)
 - [cloud_platform_architecture.md](cs/cloud_platform_architecture.md)
 - [compression_summary.md](cs/compression_summary.md)
 - [computer_system_architecture_detailed.md](cs/computer_system_architecture_detailed.md)
-- [data_structures_detailed.md](cs/data_structures_detailed.md)
 - [database_detailed.md](cs/database_detailed.md)
 - [encryption.md](cs/encryption.md)
 - [network_basic.md](cs/network_basic.md)
@@ -51,6 +53,7 @@
 - [OOP_Myths_and_Truths.md](cs/oop/OOP_Myths_and_Truths.md)
 - [oop_solid.md](cs/oop/oop_solid.md)
 - [operating_system_filesystem_detailed.md](cs/operating_system_filesystem_detailed.md)
+- [pagecache_vs_buffercache.md](cs/pagecache_vs_buffercache.md)
 - [semaphore_mutex.md](cs/semaphore_mutex.md)
 - [ssl_tls.md](cs/ssl_tls.md)
 - [tdd.md](cs/tdd.md)

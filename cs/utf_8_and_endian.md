@@ -1,9 +1,9 @@
 # UTF-8 BOM과 Endian 정리
 
 ## UTF-8 BOM
-- UTF-8 BOM(Byte Order Mark)은 파일 맨 앞에 추가되는 3바이트 (0xEF 0xBB 0xBF)르 말한다.
+- UTF-8 BOM(Byte Order Mark)은 파일 맨 앞에 추가되는 3바이트(0xEF 0xBB 0xBF)를 말한다.
 - 원래 BOM은 UTF-16, UTF-32 같은 인코딩에서 바이트 순서(Endian)를 알려주기 위해 사용된다.
-- **UTF-8에서의 역할?**: 
+- **UTF-8에서의 역할?**
   - UTF-8은 바이트 순서에 영향이 없지만, 일부 시스템/에디터가 인코딩을 명확히 하기 위해 BOM을 붙인다. (UTF-8은 순서가 없음)
 
 ### 정리
