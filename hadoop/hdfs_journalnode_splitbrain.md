@@ -4,19 +4,18 @@
 ## Split-Brain이란?
 
 **Split-brain**은 HDFS High Availability 환경에서 두 NameNode가 동시에 **Active 상태가 되는 심각한 오류 상황**이다.
-<br> 이로 인해 edit log가 불일치하거나 데이터 손상이 발생할 수 있ek.
+<br> 이로 인해 editlog가 불일치하거나 데이터 손상이 발생할 수 있다.
 
 ## Split-Brain 발생 조건
-
 - JournalNode가 3대 이상 구성된 Quorum Journal Manager 환경에서, **과반수 판단이 어긋나는 경우** 발생
 - 예: 네트워크 단절, 일부 JournalNode 장애, ZooKeeper 오류 등으로 **각 NameNode가 자신이 유효하다고 착각**
 
 ## Split-Brain 발생 시 증상
 
 - **두 Active NameNode 동시 존재**
-  - 각각의 NameNode가 독립적으로 edit log를 JournalNode에 기록
+  - 각각의 NameNode가 독립적으로 editlog를 JournalNode에 기록
 - **메타데이터 불일치**
-  - 서로 다른 edit log로 인해 metadata 정합성 붕괴
+  - 서로 다른 edit조log로 인해 metadata 정합성 붕괴
 - **자동 Failover 실패**
   - ZooKeeper 감시가 정상 작동하지 못함
 - **데이터 손상 가능**

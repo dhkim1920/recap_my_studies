@@ -67,6 +67,7 @@
 - [dockerfile_execution_commands.md](docker/dockerfile_execution_commands.md)
 ## hadoop
 
+- [fsimage_and_editlog.md](hadoop/fsimage_and_editlog.md)
 - [hadoop-basic.md](hadoop/hadoop-basic.md)
 - [hadoop_namenode_rpc_monitoring.md](hadoop/hadoop_namenode_rpc_monitoring.md)
 - [hadoop_streaming.md](hadoop/hadoop_streaming.md)

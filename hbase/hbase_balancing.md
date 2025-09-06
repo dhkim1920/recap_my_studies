@@ -13,7 +13,7 @@
 
 ### 동작 방식
 
-- HMaster가 RegionServer 간 Region 개수 또는 Region 크기를 기준으로 불균형 여부를 평가
+- HMaster가 RegionServer 간 Region 개수, 크기, locality를 기준으로 불균형 여부를 평가
 - 평가 결과에 따라 특정 Region을 다른 서버로 이동시킨다.
 
 ### 예시 설정
@@ -51,4 +51,4 @@ hbase.balancer.max.balancing = 0.1      # 이동 비율 제한 (10%)
 
 ## 그래도 돌려야 한다면?
 - HDFS Balancer 수행 후, **HBase Major Compaction**을 통해 Locality를 회복하는 것이 필요하다.
-  - 이럴경우 HFile이 병합되면서 다시 Block이 새로기록되니 근본적인 원인은 아닐 듯?
+  - 이럴경우 HFile이 병합되면서 다시 Block이 새로 기록되니 근본적인 원인은 아닐 듯?

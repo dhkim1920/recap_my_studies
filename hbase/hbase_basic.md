@@ -2,10 +2,9 @@
 
 ## HBase란?
 - 대규모 구조화 데이터를 **실시간으로 읽고 쓰기** 위한 **오픈 소스 분산형 NoSQL 데이터베이스**  
-- **HDFS** 위에서 동작
+- **HDFS** 위에서 동작한다.
 
 ## HBase의 특징
-
 1. **Column Family 기반 저장소**  
    - 데이터를 Row가 아닌 **Column Family** 단위로 저장  
    - 효율적인 **데이터 압축**과 **빠른 읽기 성능** 제공
@@ -25,7 +24,10 @@
 5. **강력한 일관성 보장**  
    - 단일 Row에 대한 **원자성 연산**과 **강력한 일관성** 제공  
    - 행 단위의 ACID 특성 지원
-   
+
+> 참고)
+> 샤딩(sharding)은 대규모 데이터를 여러 개의 물리적 노드(서버, 데이터베이스)에 나누어 저장하고 관리하는 분산 처리 기법
+
 ## HBase 구성 요소
 
 | 구성 요소           | 설명                                                                                       |
@@ -78,7 +80,7 @@ HBase는 성능 최적화와 저장 공간 회수를 위해 **compaction**을 �
 - 주요 설정
   - hbase.hstore.compaction.min: Compaction을 수행하기 위한 최소 StoreFile 수 (기본값: 3)
   - hbase.hstore.compaction.max: 한 번의 Compaction에서 병합할 수 있는 최대 StoreFile 수 (기본값: 10)
-  - hbase.hstore.compaction.min.size: 이 값보다 작은 StoreFile은 Compaction 대임
+  - hbase.hstore.compaction.min.size: 이 값보다 작은 StoreFile은 Compaction 대상이다.
   - hbase.hstore.compaction.max.size: 이 값보다 큰 StoreFile은 Compaction 대상에서 제외
   - hbase.hstore.compaction.ratio: Compaction을 결정하는 비율 (기본값: 1.2)
 

@@ -13,7 +13,8 @@
 2. 블록이 캐시에 있으면, 캐시에서 바로 데이터를 반환
 3. 블록이 캐시에 없으면, 디스크에서 블록을 읽은 후 캐시에 저장하고 데이터를 반환
 
-**※ Block cache의 데이터는 꼭 최신 데이터가 아니다.**
+> ※ Block cache의 데이터는 꼭 최신 데이터가 아니다.
+> 따라서 읽기 순서는 MemStore → BlockCache → HFile 이다.
 
 ## Block Cache의 구현체
 
@@ -50,6 +51,5 @@
 ---
 
 ## 주의사항
-
 - Block Cache는 RegionServer 단위로 관리되며, 하나의 RegionServer 내 모든 Region이 동일한 Cache를 공유함
 - Block Cache는 컬럼 패밀리 단위로 활성화/비활성화 가능
