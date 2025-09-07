@@ -2,7 +2,7 @@
 
 ## 개념
 
-**Semaphore**는 **제한된 수의 리소스에 대한 동시 접근을 제어**하는 동시성 제어 두기앋.
+**Semaphore**는 **제한된 수의 리소스에 대한 동시 접근을 제어**한다.
 
 - **Counting Semaphore**: N개의 permit를 가지고 있음
 - **Binary Semaphore**: 1개의 permit만 가진 특별한 경우 (mutex와 유사)
