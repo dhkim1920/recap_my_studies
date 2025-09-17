@@ -110,8 +110,8 @@
 - [DE_System_Design_Interview_Prep.md](interview/DE_System_Design_Interview_Prep.md)
 ## interview/example
 
-- [test1.md](interview/example/test1.md)
-- [test2.md](interview/example/test2.md)
+- [test1.md](interview/example/cdc_mysql_kafka_lakehouse_example.md)
+- [test2.md](interview/example/whiteboard_test_data_engineer.md)
 ## java
 
 - [dynamic_object_creation_java.md](java/dynamic_object_creation_java.md)
