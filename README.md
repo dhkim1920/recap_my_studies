@@ -34,10 +34,12 @@
 
 - [avro_parquet_orc.md](bigdata/avro_parquet_orc.md)
 - [basic.md](bigdata/basic.md)
+- [cdc.md](bigdata/cdc.md)
 - [column_vs_row_db.md](bigdata/column_vs_row_db.md)
 - [datalake.md](bigdata/datalake.md)
 - [datawarehouse.md](bigdata/datawarehouse.md)
 - [jackson_vs_gson_comparison.md](bigdata/jackson_vs_gson_comparison.md)
+- [metadata_catalog_and_discovery.md](bigdata/metadata_catalog_and_discovery.md)
 ## cs
 
 - [Authentication_and_Authorization.md](cs/Authentication_and_Authorization.md)
@@ -103,6 +105,13 @@
 - [iceberg_datafile_notes.md](iceberg/iceberg_datafile_notes.md)
 - [iceberg_partition_write_strategy.md](iceberg/iceberg_partition_write_strategy.md)
 - [rdbms_vs_iceberg_schema_evolution.md](iceberg/rdbms_vs_iceberg_schema_evolution.md)
+## interview
+
+- [DE_System_Design_Interview_Prep.md](interview/DE_System_Design_Interview_Prep.md)
+## interview/example
+
+- [test1.md](interview/example/test1.md)
+- [test2.md](interview/example/test2.md)
 ## java
 
 - [dynamic_object_creation_java.md](java/dynamic_object_creation_java.md)
@@ -122,6 +131,7 @@
 - [kafka_basic.md](kafka/kafka_basic.md)
 - [kafka_commit_control.md](kafka/kafka_commit_control.md)
 - [kafka_partition_guide.md](kafka/kafka_partition_guide.md)
+- [kafka_partition_sizing.md](kafka/kafka_partition_sizing.md)
 - [kafka_sasl.md](kafka/kafka_sasl.md)
 ## phoenix
 
@@ -157,6 +167,7 @@
 - [spark_gc_settings.md](spark/spark_gc_settings.md)
 - [spark_partitioning_vs_bucketing.md](spark/spark_partitioning_vs_bucketing.md)
 - [spark_persist_cache.md](spark/spark_persist_cache.md)
+- [spark_shuffle_tuning.md](spark/spark_shuffle_tuning.md)
 - [spark_sql.md](spark/spark_sql.md)
 - [spark_sql_vs_hive.md](spark/spark_sql_vs_hive.md)
 - [spark_streaming_backpressure.md](spark/spark_streaming_backpressure.md)
