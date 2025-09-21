@@ -110,8 +110,9 @@
 - [DE_System_Design_Interview_Prep.md](interview/DE_System_Design_Interview_Prep.md)
 ## interview/example
 
-- [test1.md](interview/example/cdc_mysql_kafka_lakehouse_example.md)
-- [test2.md](interview/example/whiteboard_test_data_engineer.md)
+- [cdc_mysql_kafka_50tb_architecture.md](interview/example/cdc_mysql_kafka_50tb_architecture.md)
+- [cdc_mysql_kafka_lakehouse_example.md](interview/example/cdc_mysql_kafka_lakehouse_example.md)
+- [whiteboard_test_data_engineer.md](interview/example/whiteboard_test_data_engineer.md)
 ## java
 
 - [dynamic_object_creation_java.md](java/dynamic_object_creation_java.md)
@@ -132,6 +133,7 @@
 - [kafka_commit_control.md](kafka/kafka_commit_control.md)
 - [kafka_partition_guide.md](kafka/kafka_partition_guide.md)
 - [kafka_partition_sizing.md](kafka/kafka_partition_sizing.md)
+- [kafka_partitioning.md](kafka/kafka_partitioning.md)
 - [kafka_sasl.md](kafka/kafka_sasl.md)
 ## phoenix
 
@@ -171,6 +173,7 @@
 - [spark_sql.md](spark/spark_sql.md)
 - [spark_sql_vs_hive.md](spark/spark_sql_vs_hive.md)
 - [spark_streaming_backpressure.md](spark/spark_streaming_backpressure.md)
+- [spark_success_file.md](spark/spark_success_file.md)
 - [streamingjobprogresslistener.md](spark/streamingjobprogresslistener.md)
 ## zookeeper
 
