@@ -32,7 +32,7 @@
   - 많음 (예: 20~30개)
 
 - **메모리/CPU 부담**
-  - BloomFilter 재생성, block index 병합 등으로 CPU 사용량과 GC 부담 증가
+  - BloomFilter 재생성, muli-layered index 병합 등으로 CPU 사용량과 GC 부담 증가
 
 - **HDFS 쓰기 부하**
   - 각 파일은 작지만 병합 결과는 커질 수 있음

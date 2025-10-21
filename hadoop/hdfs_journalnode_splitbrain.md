@@ -15,7 +15,7 @@
 - **두 Active NameNode 동시 존재**
   - 각각의 NameNode가 독립적으로 editlog를 JournalNode에 기록
 - **메타데이터 불일치**
-  - 서로 다른 edit조log로 인해 metadata 정합성 붕괴
+  - 서로 다른 editlog로 인해 metadata 정합성 붕괴
 - **자동 Failover 실패**
   - ZooKeeper 감시가 정상 작동하지 못함
 - **데이터 손상 가능**
