@@ -3,6 +3,7 @@
 ## ai
 
 - [ai_application_and_utilization.md](ai/ai_application_and_utilization.md)
+- [ai_mathematical_fundamentals.md](ai/ai_mathematical_fundamentals.md)
 - [data_analysis_basic.md](ai/data_analysis_basic.md)
 - [ml_summary.md](ai/ml_summary.md)
 - [pandas_basic.md](ai/pandas_basic.md)
@@ -26,6 +27,9 @@
 - [MSK.md](aws/MSK.md)
 - [aws_gp2_performance.md](aws/aws_gp2_performance.md)
 - [aws_sdk_comparison.md](aws/aws_sdk_comparison.md)
+## aws/dms
+
+- [mysql_json_column_encoding_issue.md](aws/dms/mysql_json_column_encoding_issue.md)
 ## aws/hbase
 
 - [EMR_HBase_Graceful_Scaling.md](aws/hbase/EMR_HBase_Graceful_Scaling.md)
