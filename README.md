@@ -71,6 +71,11 @@
 - [docker.md](docker/docker.md)
 - [docker_hardened_images.md](docker/docker_hardened_images.md)
 - [dockerfile_execution_commands.md](docker/dockerfile_execution_commands.md)
+## etc
+
+## etc/IDE
+
+- [vscode.md](etc/IDE/vscode.md)
 ## hadoop
 
 - [fsimage_and_editlog.md](hadoop/fsimage_and_editlog.md)
