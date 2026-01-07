@@ -44,6 +44,11 @@
 - [datawarehouse.md](bigdata/datawarehouse.md)
 - [jackson_vs_gson_comparison.md](bigdata/jackson_vs_gson_comparison.md)
 - [metadata_catalog_and_discovery.md](bigdata/metadata_catalog_and_discovery.md)
+## cdc
+
+- [embulk.md](cdc/embulk.md)
+- [mysql_binlog.md](cdc/mysql_binlog.md)
+- [oracle_supplemnetal_logging.md](cdc/oracle_supplemnetal_logging.md)
 ## cs
 
 - [Authentication_and_Authorization.md](cs/Authentication_and_Authorization.md)
@@ -144,6 +149,10 @@
 - [kafka_partition_sizing.md](kafka/kafka_partition_sizing.md)
 - [kafka_partitioning.md](kafka/kafka_partitioning.md)
 - [kafka_sasl.md](kafka/kafka_sasl.md)
+## kudu
+
+- [Kudu_Managed_vs_External.md](kudu/Kudu_Managed_vs_External.md)
+- [Kudu_Overview.md](kudu/Kudu_Overview.md)
 ## phoenix
 
 - [phoenix_query_hints.md](phoenix/phoenix_query_hints.md)
@@ -173,6 +182,7 @@
 - [javardd.md](spark/javardd.md)
 - [javasparkcontext_sparksession_summary.md](spark/javasparkcontext_sparksession_summary.md)
 - [javastreamingcontext_vs_javasparkcontext.md](spark/javastreamingcontext_vs_javasparkcontext.md)
+- [observation.md](spark/observation.md)
 - [spark_basic.md](spark/spark_basic.md)
 - [spark_catalyst_tungsten.md](spark/spark_catalyst_tungsten.md)
 - [spark_gc_settings.md](spark/spark_gc_settings.md)
