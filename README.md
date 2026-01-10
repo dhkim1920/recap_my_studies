@@ -140,6 +140,9 @@
 - [java_semaphore.md](java/java_semaphore.md)
 - [java_serializable.md](java/java_serializable.md)
 - [volatile.md](java/volatile.md)
+## k8s
+
+- [pod_name.md](k8s/pod_name.md)
 ## kafka
 
 - [broker_tuning.md](kafka/broker_tuning.md)
