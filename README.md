@@ -9,6 +9,7 @@
 - [pandas_basic.md](ai/pandas_basic.md)
 ## airflow
 
+- [Spark_on_Kubernetes_Operator.md](airflow/Spark_on_Kubernetes_Operator.md)
 - [airflow_basic.md](airflow/airflow_basic.md)
 - [airflow_execution_date_problem.md](airflow/airflow_execution_date_problem.md)
 - [airflow_executors.md](airflow/airflow_executors.md)
