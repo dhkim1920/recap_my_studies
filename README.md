@@ -13,6 +13,7 @@
 - [airflow_basic.md](airflow/airflow_basic.md)
 - [airflow_execution_date_problem.md](airflow/airflow_execution_date_problem.md)
 - [airflow_executors.md](airflow/airflow_executors.md)
+- [fernet_key.md](airflow/fernet_key.md)
 ## algorithm
 
 - [algorithm_basic.md](algorithm/algorithm_basic.md)
@@ -74,9 +75,11 @@
 
 - [docker-compose_mount_volume_many_files.md](docker/docker-compose_mount_volume_many_files.md)
 - [docker-compose_zombie_process.md](docker/docker-compose_zombie_process.md)
+- [docker-image-optimization-guide.md](docker/docker-image-optimization-guide.md)
 - [docker.md](docker/docker.md)
 - [docker_hardened_images.md](docker/docker_hardened_images.md)
 - [dockerfile_execution_commands.md](docker/dockerfile_execution_commands.md)
+- [multi-stage_build.md](docker/multi-stage_build.md)
 ## etc
 
 ## etc/IDE
