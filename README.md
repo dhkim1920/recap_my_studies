@@ -38,6 +38,7 @@
 - [vpc.md](aws/vpc.md)
 ## bigdata
 
+- [VARIANT_Shredding.md](bigdata/VARIANT_Shredding.md)
 - [avro_parquet_orc.md](bigdata/avro_parquet_orc.md)
 - [basic.md](bigdata/basic.md)
 - [cdc.md](bigdata/cdc.md)
@@ -182,6 +183,7 @@
 ## spark
 
 - [Tuning_Apache_Spark.md](spark/Tuning_Apache_Spark.md)
+- [about_spark_4.1.md](spark/about_spark_4.1.md)
 - [broadcast_vs_accumulator.md](spark/broadcast_vs_accumulator.md)
 - [foreach_vs_foreachPartition_async.md](spark/foreach_vs_foreachPartition_async.md)
 - [is_spark_streaming_real_time.md](spark/is_spark_streaming_real_time.md)

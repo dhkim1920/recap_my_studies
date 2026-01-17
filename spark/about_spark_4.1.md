@@ -1,0 +1,86 @@
+Spark 4.1의 핵심 변화 5가지를 실무에서 바로 참고하실 수 있도록 **핵심 요약과 예시 코드** 중심으로 다시 정리해 드립니다.
+
+## 1 Spark Declarative Pipelines
+코드의 실행 순서를 일일이 지정하지 않고, 최종 결과물(Table, View)의 정의만 선언하면 Spark가 최적의 경로로 빌드한다.
+
+```python
+from pyspark.sql.pipelines import Pipeline
+
+# '어떻게'가 아닌 '무엇'을 만들지 정의
+pipeline = Pipeline(name="daily_sales_report")
+
+@pipeline.table
+def raw_data():
+    return spark.readStream.format("cloudFiles").load("/input/sales")
+
+@pipeline.table
+def refined_sales():
+    # 의존성(raw_data)을 선언하면 Spark가 알아서 순서를 잡음
+    return pipeline.read("raw_data").filter("amount > 0")
+
+# 실행 및 체크포인트 관리는 Spark가 전담
+pipeline.deploy()
+
+```
+
+## 2 Real-Time Mode
+기존 Micro-batch의 수백 ms 지연을 ms 단위로 단축합니다. 코드 변경 없이 **Trigger 설정**만 바꾸면 된다.
+```python
+# 기존 방식: Trigger.ProcessingTime("10 seconds")
+# 4.1 리얼타임 모드 활성화
+query = df.writeStream \
+    .format("console") \
+    .trigger(processingTime="0 seconds") \
+    .option("checkpointLocation", "/checkpoint/path") \
+    .start()
+```
+
+## 3 더 빨라진 PySpark (Arrow-native UDF)
+- Arrow-native UDF: @arrow_udf, @arrow_udtf 데코레이터를 통해 Pandas 변환 오버헤드 없이 PyArrow 데이터를 직접 처리하여 성능이 극대화되었다.
+```python
+from pyspark.sql.functions import arrow_udf
+import pyarrow.compute as pc
+
+# Arrow-native UDF 정의 (Pandas보다 빠름)
+@arrow_udf(returnType="double")
+def predict_score(batch):
+    # pyarrow 배열을 직접 연산
+    return pc.multiply(batch, 1.5)
+
+df.withColumn("score", predict_score(df.raw_val)).show()
+```
+
+## 4 Spark Connect ML 지원
+서버에 무거운 Spark 라이브러리를 깔지 않아도, 가벼운 클라이언트 환경(예: 로컬 노트북)에서 머신러닝 학습이 가능하다고 한다.
+
+```python
+from pyspark.ml.connect.classification import LogisticRegression
+from pyspark.sql.connect.session import SparkSession
+
+# 원격 Spark 서버에 연결 (Spark Connect)
+spark = SparkSession.builder.remote("sc://remote-host:15002").get_init()
+
+# 로컬에서 명령을 내리지만 실제 학습은 원격 서버 클러스터에서 수행
+lr = LogisticRegression(maxIter=10)
+model = lr.fit(train_data)
+```
+
+## 5 SQL Scripting & VARIANT Shredding
+- SQL Scripting: 변수 선언(DECLARE), 루프(FOR/WHILE), 예외 처리 등이 포함된 절차적 SQL 작성이 가능해졌다고 한다.
+- VARIANT Shredding: JSON과 같은 반정형 데이터를 위한 VARIANT 타입에 분해 저장(Shredding) 기술이 적용
+```sql
+-- 1. SQL Scripting (절차적 로직)
+DECLARE total_count INT;
+SET total_count = (SELECT count(*) FROM sales);
+
+IF total_count > 1000 THEN
+    INSERT INTO alerts VALUES ('High Volume Detected');
+END IF;
+
+-- 2. VARIANT Shredding (분해 저장된 JSON 조회)
+-- 아래와 같이 조회 시 Spark 4.1은 내부적으로 최적화된 컬럼형 데이터를 읽어 8~30배 빨라집니다.
+SELECT raw_json:user:name, raw_json:order:id 
+FROM raw_events 
+WHERE raw_json:status = 'completed';
+
+```
