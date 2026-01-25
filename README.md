@@ -42,6 +42,7 @@
 ## bigdata
 
 - [VARIANT_Shredding.md](bigdata/VARIANT_Shredding.md)
+- [Why_You_Should_Avoid_Pandas_for_Batch_Pipelines.md](bigdata/Why_You_Should_Avoid_Pandas_for_Batch_Pipelines.md)
 - [avro_parquet_orc.md](bigdata/avro_parquet_orc.md)
 - [basic.md](bigdata/basic.md)
 - [cdc.md](bigdata/cdc.md)
