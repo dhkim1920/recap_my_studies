@@ -9,10 +9,13 @@
 - [pandas_basic.md](ai/pandas_basic.md)
 ## airflow
 
+- [Airflow_on_Kubernetes_strategy.md](airflow/Airflow_on_Kubernetes_strategy.md)
+- [Kubernetes_Executor_vs_PodOperator.md](airflow/Kubernetes_Executor_vs_PodOperator.md)
 - [Spark_on_Kubernetes_Operator.md](airflow/Spark_on_Kubernetes_Operator.md)
 - [airflow_basic.md](airflow/airflow_basic.md)
 - [airflow_execution_date_problem.md](airflow/airflow_execution_date_problem.md)
 - [airflow_executors.md](airflow/airflow_executors.md)
+- [airflow_on_k8s.md](airflow/airflow_on_k8s.md)
 - [fernet_key.md](airflow/fernet_key.md)
 ## algorithm
 
@@ -148,6 +151,7 @@
 ## k8s
 
 - [pod_name.md](k8s/pod_name.md)
+- [sidecar_containers.md](k8s/sidecar_containers.md)
 ## kafka
 
 - [broker_tuning.md](kafka/broker_tuning.md)
