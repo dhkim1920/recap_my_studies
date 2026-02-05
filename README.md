@@ -17,6 +17,7 @@
 - [airflow_on_k8s.md](airflow/airflow_on_k8s.md)
 - [airflow_기초.md](airflow/airflow_기초.md)
 - [fernet_key.md](airflow/fernet_key.md)
+- [많은_DAG로인한_metadb_이슈_및_해결.md](airflow/많은_DAG로인한_metadb_이슈_및_해결.md)
 ## algorithm
 
 - [DFS_BFS.md](algorithm/DFS_BFS.md)
