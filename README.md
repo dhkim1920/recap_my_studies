@@ -16,6 +16,7 @@
 - [airflow_executors.md](airflow/airflow_executors.md)
 - [airflow_on_k8s.md](airflow/airflow_on_k8s.md)
 - [airflow_기초.md](airflow/airflow_기초.md)
+- [astrnomer_agent_설치해보기.md](airflow/astrnomer_agent_설치해보기.md)
 - [fernet_key.md](airflow/fernet_key.md)
 - [많은_DAG로인한_metadb_이슈_및_해결.md](airflow/많은_DAG로인한_metadb_이슈_및_해결.md)
 ## algorithm
