@@ -53,6 +53,7 @@
 - [jackson_vs_gson_comparison.md](bigdata/jackson_vs_gson_comparison.md)
 - [metadata_catalog_and_discovery.md](bigdata/metadata_catalog_and_discovery.md)
 - [대규모_데이터_처리할_때_판다스를_쓰면_안되는_이유.md](bigdata/대규모_데이터_처리할_때_판다스를_쓰면_안되는_이유.md)
+- [최신아키텍쳐.md](bigdata/최신아키텍쳐.md)
 ## cdc
 
 - [embulk.md](cdc/embulk.md)
