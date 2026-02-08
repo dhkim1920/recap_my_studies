@@ -153,6 +153,11 @@
 - [자바_함수형_인터페이스.md](java/자바_함수형_인터페이스.md)
 ## k8s
 
+## k8s/argocd
+
+- [App_of_Apps_패턴.md](k8s/argocd/App_of_Apps_패턴.md)
+- [Non-cascade.md](k8s/argocd/Non-cascade.md)
+- [argocd_기초.md](k8s/argocd/argocd_기초.md)
 - [pod_name.md](k8s/pod_name.md)
 - [sidecar_containers.md](k8s/sidecar_containers.md)
 ## kafka
