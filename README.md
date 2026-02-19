@@ -80,6 +80,10 @@
 - [컴퓨터_시스템_구조_상세.md](cs/컴퓨터_시스템_구조_상세.md)
 - [클라우드_플랫폼_아키텍처.md](cs/클라우드_플랫폼_아키텍처.md)
 - [페이지캐시_vs_버퍼캐시.md](cs/페이지캐시_vs_버퍼캐시.md)
+## db
+
+## db/postgre
+
 ## docker
 
 - [multi-stage_build.md](docker/multi-stage_build.md)
@@ -160,6 +164,8 @@
 - [App_of_Apps_패턴.md](k8s/argocd/App_of_Apps_패턴.md)
 - [Non-cascade.md](k8s/argocd/Non-cascade.md)
 - [argocd_기초.md](k8s/argocd/argocd_기초.md)
+- [cni.md](k8s/cni.md)
+- [etcd_자원설정하기.md](k8s/etcd_자원설정하기.md)
 - [pod_name.md](k8s/pod_name.md)
 - [sidecar_containers.md](k8s/sidecar_containers.md)
 ## kafka
@@ -175,6 +181,9 @@
 
 - [쿠두_개요.md](kudu/쿠두_개요.md)
 - [쿠두_매니지드_vs_외부.md](kudu/쿠두_매니지드_vs_외부.md)
+## linux
+
+- [패킷_필터링과_정책.md](linux/패킷_필터링과_정책.md)
 ## phoenix
 
 - [salt.md](phoenix/salt.md)
