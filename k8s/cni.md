@@ -10,15 +10,15 @@
 
 - 각 Pod는 클러스터 전역에서 유니크한 IP를 가진다.
 - 클러스터의 모든 Pod는 NAT 없이 서로를 볼 수 있고 직접 통신할 수 있다.
-- Pod에 IP를 할당하고, Pod/노드 간 통신이 가능하도록 클러스터 네트워킹을 구성하는 역할을 네트워크 플러그인이 담당한다.
+- Pod에 IP를 할당하고, Pod/노드 간 통신이 가능하도록 클러스터 네트워킹을 구성하는 역할을 네트워크 플러그인이 담당
 - 이 요구를 만족시키는 구현체가 CNI 플러그인(또는 그와 동등한 네트워크 플러그인 구성)이다.
 
 ## CNI 호출 모델
 
 ### 플러그인 타입
 
-- “Interface” 플러그인은 컨테이너 내부에 네트워크 인터페이스를 만들고 연결성을 보장한다.
-- “Chained” 플러그인은 이미 만들어진 인터페이스 설정을 조정하며, 필요 시 추가 인터페이스 생성도 가능하다.
+- Interface 플러그인: 컨테이너 내부에 네트워크 인터페이스를 만들고 연결성을 보장
+- Chained 플러그인: 이미 만들어진 인터페이스 설정을 조정하며, 필요 시 추가 인터페이스 생성도 가능
 
 ### 전달 방식
 
@@ -26,23 +26,17 @@
   - 환경변수로 파라미터 전달
   - stdin으로 JSON 설정 전달
 - 플러그인 → 런타임
-
   - 성공: stdout에 JSON 결과
-  - 실패: stderr에 오류 출력 후 비-0 종료 코드로 종료한다
+  - 실패: stderr에 오류 출력 후 종료 코드로 종료
 
-### 주요 환경변수(스펙 정의)
+### 동작
 
-- `CNI_COMMAND`: `ADD`, `DEL`, `CHECK`, `GC`, `VERSION`
-- `CNI_CONTAINERID`, `CNI_NETNS`, `CNI_IFNAME`, `CNI_ARGS`, `CNI_PATH` 등
+- `ADD`: 컨테이너 네트워크에 추가한다(인터페이스 생성 또는 기존 인터페이스 조정), 성공 시 결과 구조를 stdout으로 출력
+- `DEL`: 컨테이너 네트워크에서 제거
+- `CHECK`: 현재 네트워킹이 기대대로인지 점검
+- `GC`, `VERSION`: 정리/버전 지원 질의에 사용
 
-### 동작(Operations)
-
-- `ADD`: 컨테이너 네트워크에 추가한다(인터페이스 생성 또는 기존 인터페이스 조정). 성공 시 결과 구조를 stdout으로 출력해야 한다.
-- `DEL`: 컨테이너 네트워크에서 제거한다.
-- `CHECK`: 현재 네트워킹이 기대대로인지 점검한다.
-- `GC`, `VERSION`: 정리/버전 지원 질의에 사용한다.
-
-## Kubernetes에서 “누가 CNI를 관리/로딩하는가”
+## Kubernetes에서 누가 CNI를 로딩할까?
 
 ### 컨테이너 런타임 중심
 
@@ -57,19 +51,16 @@
 - NetworkPolicy를 사용하려면 enforcement를 지원하는 네트워크 플러그인이 필요하다.
 - 구현하는 컨트롤러가 없으면 NetworkPolicy 리소스를 만들어도 효과가 없다.
 
-## CNI 플러그인 요구사항 (Kubernetes 문서에 명시된 항목)
+## CNI 플러그인 요구사항
 
 ### Loopback(`lo`)
-
 - 네트워크 모델 구현용 CNI 플러그인 외에도, 컨테이너 런타임은 각 sandbox(파드 sandbox 등)에 loopback 인터페이스 `lo`를 제공해야 한다.
 
 ### hostPort 지원
-
 - CNI 네트워킹 플러그인은 `hostPort`를 지원한다.
 - `hostPort`를 쓰려면 CNI 설정에 `portMappings` capability를 지정해야 한다.
 
 ### 트래픽 셰이핑(실험 기능)
-
 - CNI 네트워킹 플러그인은 Pod ingress/egress 트래픽 셰이핑도 지원한다.
 - 트래픽 셰이핑을 쓰려면 CNI 설정 파일(기본 경로 `/etc/cni/net.d`)에 `bandwidth` 플러그인을 추가하고, CNI 바이너리 경로(기본 경로 `/opt/cni/bin`)에 바이너리가 포함되어야 한다.
 - 이후 Pod에 `kubernetes.io/ingress-bandwidth`, `kubernetes.io/egress-bandwidth` 애노테이션을 추가해 사용한다.
