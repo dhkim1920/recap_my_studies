@@ -185,6 +185,7 @@
 - [쿠두_매니지드_vs_외부.md](kudu/쿠두_매니지드_vs_외부.md)
 ## linux
 
+- [zram.md](linux/zram.md)
 - [패킷_필터링과_정책.md](linux/패킷_필터링과_정책.md)
 ## phoenix
 
