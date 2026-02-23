@@ -12,6 +12,7 @@
 - [Airflow_on_Kubernetes_전략.md](airflow/Airflow_on_Kubernetes_전략.md)
 - [Kubernetes_Executor_vs_PodOperator.md](airflow/Kubernetes_Executor_vs_PodOperator.md)
 - [Spark_on_Kubernetes_Operator.md](airflow/Spark_on_Kubernetes_Operator.md)
+- [airflow_deferrable_operators_triggers.md](airflow/airflow_deferrable_operators_triggers.md)
 - [airflow_execution_date_문제.md](airflow/airflow_execution_date_문제.md)
 - [airflow_executors.md](airflow/airflow_executors.md)
 - [airflow_on_k8s.md](airflow/airflow_on_k8s.md)
@@ -44,6 +45,7 @@
 - [EMR_HBase_우아한_스케일링.md](aws/hbase/EMR_HBase_우아한_스케일링.md)
 ## bigdata
 
+- [2026_데이터엔지니어링_트렌드.md](bigdata/2026_데이터엔지니어링_트렌드.md)
 - [VARIANT_Shredding.md](bigdata/VARIANT_Shredding.md)
 - [avro_parquet_orc.md](bigdata/avro_parquet_orc.md)
 - [basic.md](bigdata/basic.md)
