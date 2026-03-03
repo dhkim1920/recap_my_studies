@@ -12,6 +12,8 @@
 - [판다스_기초.md](ai/판다스_기초.md)
 ## airflow
 
+- [AIP-67_Multi-team_deployment_of_Airflow_components.md](airflow/AIP-67_Multi-team_deployment_of_Airflow_components.md)
+- [AIP-72_Airflow3x_runtime_model.md](airflow/AIP-72_Airflow3x_runtime_model.md)
 - [Airflow_on_Kubernetes_전략.md](airflow/Airflow_on_Kubernetes_전략.md)
 - [Kubernetes_Executor_vs_PodOperator.md](airflow/Kubernetes_Executor_vs_PodOperator.md)
 - [Spark_on_Kubernetes_Operator.md](airflow/Spark_on_Kubernetes_Operator.md)
