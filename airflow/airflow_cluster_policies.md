@@ -1,4 +1,4 @@
-# 클러스터 정책 Cluster Policies
+# Cluster Policies
 
 ## 개요
 클러스터 전체 수준에서 DAG나 Task를 확인하거나 변경하기 위해 클러스터 정책을 사용할 수 있다. 또한 dag_id나 기타 속성을 기반으로 클러스터 전체 설정을 DAG에 일괄 적용할 수도 있다.
