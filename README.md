@@ -192,6 +192,7 @@
 - [쿠두_매니지드_vs_외부.md](kudu/쿠두_매니지드_vs_외부.md)
 ## linux
 
+- [cgroup_v1_v2_guide.md](linux/cgroup_v1_v2_guide.md)
 - [zram.md](linux/zram.md)
 - [패킷_필터링과_정책.md](linux/패킷_필터링과_정책.md)
 ## phoenix
